@@ -54,7 +54,7 @@
 			"$0"
 		],
 		"description": "SFZ v2 header for defining curves for MIDI CC controls."
-	}
+	},
 
 	"SFZv1 amp_keycenter": {
 		"scope": "sfz",
@@ -77,7 +77,7 @@
 	"SFZv1 amp_velcurve_N": {
 		"scope": "sfz",
 		"prefix": "amp_velcurve_N",
-		"body": "amp_velcurve_N=Standard curve (see amp_veltrack)$0",
+		"body": "amp_velcurve_${N}=$0",
 		"description": "User-defined amplifier velocity curve. Type: float | Range: 0 to 1"
 	},
 	"SFZv1 amp_veltrack": {
@@ -95,8 +95,8 @@
 	"SFZv1 ampeg_attackccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_attackccN",
-		"body": "ampeg_attackcc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "ampeg_attackcc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"SFZv1 ampeg_decay": {
 		"scope": "sfz",
@@ -107,8 +107,8 @@
 	"SFZv1 ampeg_decayccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_decayccN",
-		"body": "ampeg_decaycc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "ampeg_decaycc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"SFZv1 ampeg_delay": {
 		"scope": "sfz",
@@ -119,8 +119,8 @@
 	"SFZv1 ampeg_delayccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_delayccN",
-		"body": "ampeg_delaycc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "ampeg_delaycc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"SFZv1 ampeg_hold": {
 		"scope": "sfz",
@@ -131,8 +131,8 @@
 	"SFZv1 ampeg_holdccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_holdccN",
-		"body": "ampeg_holdcc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "ampeg_holdcc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"SFZv1 ampeg_release": {
 		"scope": "sfz",
@@ -143,8 +143,8 @@
 	"SFZv1 ampeg_releaseccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_releaseccN",
-		"body": "ampeg_releasecc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "ampeg_releasecc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"SFZv1 ampeg_start": {
 		"scope": "sfz",
@@ -155,8 +155,8 @@
 	"SFZv1 ampeg_startccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_startccN",
-		"body": "ampeg_startcc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "ampeg_startcc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"SFZv1 ampeg_sustain": {
 		"scope": "sfz",
@@ -167,8 +167,8 @@
 	"SFZv1 ampeg_sustainccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_sustainccN",
-		"body": "ampeg_sustaincc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 %"
+		"body": "ampeg_sustaincc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 %"
 	},
 	"SFZv1 ampeg_vel2attack": {
 		"scope": "sfz",
@@ -221,8 +221,8 @@
 	"SFZv1 amplfo_depthccN": {
 		"scope": "sfz",
 		"prefix": "amplfo_depthccN",
-		"body": "amplfo_depthcc${1:N}=0$0",
-		"description": " Type: float | Range: -10 to 10 dB"
+		"body": "amplfo_depthcc${N}=0$0",
+		"description": "Type: float | Range: -10 to 10 dB"
 	},
 	"SFZv1 amplfo_depthchanaft": {
 		"scope": "sfz",
@@ -251,8 +251,8 @@
 	"SFZv1 amplfo_freqccN": {
 		"scope": "sfz",
 		"prefix": "amplfo_freqccN",
-		"body": "amplfo_freqcc${1:N}=0$0",
-		"description": " Type: float | Range: -200 to 200 Hz"
+		"body": "amplfo_freqcc${N}=0$0",
+		"description": "Type: float | Range: -200 to 200 Hz"
 	},
 	"SFZv1 amplfo_freqchanaft": {
 		"scope": "sfz",
@@ -311,7 +311,7 @@
 	"SFZv1 cutoff_ccN": {
 		"scope": "sfz",
 		"prefix": "cutoff_ccN",
-		"body": "cutoff_cc${1:N}=0$0",
+		"body": "cutoff_cc${N}=0$0",
 		"description": "The variation in the cutoff frequency when MIDI continuous controller N is received. Type: integer | Range: -9600 to 9600 cents"
 	},
 	"SFZv1 cutoff_chanaft": {
@@ -329,13 +329,13 @@
 	"SFZv1 cutoff": {
 		"scope": "sfz",
 		"prefix": "cutoff",
-		"body": "cutoff=filter disabled$0",
+		"body": "cutoff=$0",
 		"description": "Sets the cutoff frequency (Hz) of the filters. Type: float | Range: 0 to SampleRate / 2 Hz"
 	},
 	"SFZv1 delay_ccN": {
 		"scope": "sfz",
 		"prefix": "delay_ccN",
-		"body": "delay_cc${1:N}=0$0",
+		"body": "delay_cc${N}=0$0",
 		"description": "Region delay time after MIDI continuous controller N messages are received. If the region receives a note-off message before delay time, the region won't play. Type: float | Range: 0 to 100 seconds"
 	},
 	"SFZv1 delay_random": {
@@ -371,49 +371,49 @@
 	"SFZv1 eqN_bw": {
 		"scope": "sfz",
 		"prefix": "eqN_bw",
-		"body": "eqN_bw=1$0",
+		"body": "eq${1|1,2,3|}_bw=1$0",
 		"description": "Bandwidth of the equalizer band, in octaves. Type: float | Range: 0.001 to 4 octaves"
 	},
 	"SFZv1 eqN_bwccX": {
 		"scope": "sfz",
 		"prefix": "eqN_bwccX",
-		"body": "eqN_bwccX=0$0",
-		"description": " Type: float | Range: -4 to 4 octaves"
+		"body": "eq${1|1,2,3|}_bwcc${X}=0$0",
+		"description": "Type: float | Range: -4 to 4 octaves"
 	},
 	"SFZv1 eqN_freq": {
 		"scope": "sfz",
 		"prefix": "eqN_freq",
-		"body": "eqN_freq=eq1_freq=50eq1_freq=500eq1_freq=5000$0",
+		"body": "eq${1|1,2,3|}_freq=$0",
 		"description": "Frequency of the equalizer band, in Hertz. Type: float | Range: 0 to 30000 Hz"
 	},
 	"SFZv1 eqN_freqccX": {
 		"scope": "sfz",
 		"prefix": "eqN_freqccX",
-		"body": "eqN_freqccX=0$0",
-		"description": " Type: float | Range: -30000 to 30000 Hz"
+		"body": "eq${1|1,2,3|}_freqcc${X}=0$0",
+		"description": "Type: float | Range: -30000 to 30000 Hz"
 	},
 	"SFZv1 eqN_gain": {
 		"scope": "sfz",
 		"prefix": "eqN_gain",
-		"body": "eqN_gain=0$0",
+		"body": "eq${1|1,2,3|}_gain=0$0",
 		"description": "Gain of the equalizer band, in decibels. Type: float | Range: -96 to 24 dB"
 	},
 	"SFZv1 eqN_gainccX": {
 		"scope": "sfz",
 		"prefix": "eqN_gainccX",
-		"body": "eqN_gainccX=0$0",
-		"description": " Type: float | Range: -96 to 24 dB"
+		"body": "eq${1|1,2,3|}_gaincc${X}=0$0",
+		"description": "Type: float | Range: -96 to 24 dB"
 	},
 	"SFZv1 eqN_vel2freq": {
 		"scope": "sfz",
 		"prefix": "eqN_vel2freq",
-		"body": "eqN_vel2freq=0$0",
+		"body": "eq${1|1,2,3|}_vel2freq=0$0",
 		"description": "Frequency change of the equalizer band with MIDI velocity, in Hertz. Type: float | Range: -30000 to 30000 Hz"
 	},
 	"SFZv1 eqN_vel2gain": {
 		"scope": "sfz",
 		"prefix": "eqN_vel2gain",
-		"body": "eqN_vel2gain=0$0",
+		"body": "eq${1|1,2,3|}_vel2gain=0$0",
 		"description": "Gain change of the equalizer band with MIDI velocity, in decibels. Type: float | Range: -96 to 24 dB"
 	},
 	"SFZv1 fil_keycenter": {
@@ -551,8 +551,8 @@
 	"SFZv1 fillfo_depthccN": {
 		"scope": "sfz",
 		"prefix": "fillfo_depthccN",
-		"body": "fillfo_depthcc${1:N}=0$0",
-		"description": " Type: float | Range: -1200 to 1200 cents"
+		"body": "fillfo_depthcc${N}=0$0",
+		"description": "Type: float | Range: -1200 to 1200 cents"
 	},
 	"SFZv1 fillfo_depthchanaft": {
 		"scope": "sfz",
@@ -581,8 +581,8 @@
 	"SFZv1 fillfo_freqccN": {
 		"scope": "sfz",
 		"prefix": "fillfo_freqccN",
-		"body": "fillfo_freqcc${1:N}=0$0",
-		"description": " Type: float | Range: -200 to 200 Hz"
+		"body": "fillfo_freqcc${N}=0$0",
+		"description": "Type: float | Range: -200 to 200 Hz"
 	},
 	"SFZv1 fillfo_freqchanaft": {
 		"scope": "sfz",
@@ -605,7 +605,7 @@
 	"SFZv1 gain_ccN": {
 		"scope": "sfz",
 		"prefix": "gain_ccN",
-		"body": "gain_cc${1:N}=0$0",
+		"body": "gain_cc${N}=0$0",
 		"description": "Gain applied on MIDI control N, in decibels. Type: float | Range: -144 to 48 dB"
 	},
 	"SFZv1 group": {
@@ -629,7 +629,7 @@
 	"SFZv1 hiccN": {
 		"scope": "sfz",
 		"prefix": "hiccN",
-		"body": "hicc${1:N}=127$0",
+		"body": "hicc${N}=127$0",
 		"description": "Defines the range of the last MIDI controller N required for the region to play. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 hichan": {
@@ -689,7 +689,7 @@
 	"SFZv1 loccN": {
 		"scope": "sfz",
 		"prefix": "loccN",
-		"body": "locc${1:N}=0$0",
+		"body": "locc${N}=0$0",
 		"description": "Defines the range of the last MIDI controller N required for the region to play. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 lochan": {
@@ -719,8 +719,8 @@
 	"SFZv1 loop_mode": {
 		"scope": "sfz",
 		"prefix": "loop_mode",
-		"body": "loop_mode=no_loop for samples without a loop defined, loop_continuous for samples with defined loop(s).$0",
-		"description": "Allows playing samples with loops defined in the unlooped mode. Type: string | Range: no_loop, one_shot, loop_continuous, loop_sustain"
+		"body": "loop_mode=${1|loop_continuous,loop_sustain,no_loop,one_shot|}$0",
+		"description": "Allows playing samples with loops defined in the unlooped mode. Type: string | Options: loop_continuous, loop_sustain, no_loop, one_shot"
 	},
 	"SFZv1 loop_start": {
 		"scope": "sfz",
@@ -785,7 +785,7 @@
 	"SFZv1 offset_ccN": {
 		"scope": "sfz",
 		"prefix": "offset_ccN",
-		"body": "offset_cc${1:N}=0$0",
+		"body": "offset_cc${N}=0$0",
 		"description": "The offset used to play the sample according to last position of MIDI continuous controller N. Type: integer | Range: 0 to 4294967296 sample units"
 	},
 	"SFZv1 offset_random": {
@@ -803,13 +803,13 @@
 	"SFZv1 on_hiccN": {
 		"scope": "sfz",
 		"prefix": "on_hiccN",
-		"body": "on_hicc${1:N}=-1$0",
+		"body": "on_hicc${N}=-1$0",
 		"description": "If a MIDI control message with a value between on_loccN and on_hiccN is received, the region will play. Default value is -1, it means unassigned. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 on_loccN": {
 		"scope": "sfz",
 		"prefix": "on_loccN",
-		"body": "on_locc${1:N}=-1$0",
+		"body": "on_locc${N}=-1$0",
 		"description": "If a MIDI control message with a value between on_loccN and on_hiccN is received, the region will play. Default value is -1, it means unassigned. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 output": {
@@ -953,8 +953,8 @@
 	"SFZv1 pitchlfo_depthccN": {
 		"scope": "sfz",
 		"prefix": "pitchlfo_depthccN",
-		"body": "pitchlfo_depthcc${1:N}=0$0",
-		"description": " Type: float | Range: -1200 to 1200 cents"
+		"body": "pitchlfo_depthcc${N}=0$0",
+		"description": "Type: float | Range: -1200 to 1200 cents"
 	},
 	"SFZv1 pitchlfo_depthchanaft": {
 		"scope": "sfz",
@@ -983,8 +983,8 @@
 	"SFZv1 pitchlfo_freqccN": {
 		"scope": "sfz",
 		"prefix": "pitchlfo_freqccN",
-		"body": "pitchlfo_freqcc${1:N}=0$0",
-		"description": " Type: float | Range: -200 to 200 Hz"
+		"body": "pitchlfo_freqcc${N}=0$0",
+		"description": "Type: float | Range: -200 to 200 Hz"
 	},
 	"SFZv1 pitchlfo_freqchanaft": {
 		"scope": "sfz",
@@ -1019,8 +1019,8 @@
 	"SFZv1 sample": {
 		"scope": "sfz",
 		"prefix": "sample",
-		"body": "sample=$0",
-		"description": "Defines which sample file the region will play. Type: string | Range: N/A"
+		"body": "sample=${unquoted/file/path}",
+		"description": "Defines which sample file the region will play. Type: string"
 	},
 	"SFZv1 seq_length": {
 		"scope": "sfz",
@@ -1139,7 +1139,7 @@
 	"SFZv1 xfin_hiccN": {
 		"scope": "sfz",
 		"prefix": "xfin_hiccN",
-		"body": "xfin_hicc${1:N}=0$0",
+		"body": "xfin_hicc${N}=0$0",
 		"description": "Fade in control based on MIDI CC. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 xfin_hikey": {
@@ -1157,7 +1157,7 @@
 	"SFZv1 xfin_loccN": {
 		"scope": "sfz",
 		"prefix": "xfin_loccN",
-		"body": "xfin_locc${1:N}=0$0",
+		"body": "xfin_locc${N}=0$0",
 		"description": "Fade in control based on MIDI CC. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 xfin_lokey": {
@@ -1175,7 +1175,7 @@
 	"SFZv1 xfout_hiccN": {
 		"scope": "sfz",
 		"prefix": "xfout_hiccN",
-		"body": "xfout_hicc${1:N}=0$0",
+		"body": "xfout_hicc${N}=0$0",
 		"description": "Fade out control based on MIDI CC. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 xfout_hikey": {
@@ -1193,7 +1193,7 @@
 	"SFZv1 xfout_loccN": {
 		"scope": "sfz",
 		"prefix": "xfout_loccN",
-		"body": "xfout_locc${1:N}=0$0",
+		"body": "xfout_locc${N}=0$0",
 		"description": "Fade out control based on MIDI CC. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 xfout_lokey": {
@@ -1206,56 +1206,56 @@
 	"SFZv2 ampeg_attack_onccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_attack_onccN",
-		"body": "ampeg_attack_oncc${1:N}=0$0",
+		"body": "ampeg_attack_oncc${N}=0$0",
 		"description": "ampeg_attackccN alias. Type: float | Range: -100 to 100 seconds"
 	},
 	"SFZv2 ampeg_decay_onccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_decay_onccN",
-		"body": "ampeg_decay_oncc${1:N}=0$0",
+		"body": "ampeg_decay_oncc${N}=0$0",
 		"description": "ampeg_decayccN alias. Type: float | Range: -100 to 100"
 	},
 	"SFZv2 ampeg_delay_onccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_delay_onccN",
-		"body": "ampeg_delay_oncc${1:N}=0$0",
+		"body": "ampeg_delay_oncc${N}=0$0",
 		"description": "ampeg_delayccN alias. Type: float | Range: -100 to 100"
 	},
 	"SFZv2 ampeg_hold_onccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_hold_onccN",
-		"body": "ampeg_hold_oncc${1:N}=0$0",
+		"body": "ampeg_hold_oncc${N}=0$0",
 		"description": "ampeg_holdccN alias. Type: float | Range: -100 to 100"
 	},
 	"SFZv2 ampeg_release_onccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_release_onccN",
-		"body": "ampeg_release_oncc${1:N}=0$0",
+		"body": "ampeg_release_oncc${N}=0$0",
 		"description": "ampeg_releaseccN alias. Type: float | Range: -100 to 100 seconds"
 	},
 	"SFZv2 ampeg_start_onccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_start_onccN",
-		"body": "ampeg_start_oncc${1:N}=0$0",
+		"body": "ampeg_start_oncc${N}=0$0",
 		"description": "ampeg_startccN alias. Type: float | Range: -100 to 100 seconds"
 	},
 	"SFZv2 ampeg_sustain_onccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_sustain_onccN",
-		"body": "ampeg_sustain_oncc${1:N}=0$0",
+		"body": "ampeg_sustain_oncc${N}=0$0",
 		"description": "ampeg_sustainccN alias. Type: float | Range: -100 to 100 %"
 	},
 	"SFZv2 amplfo_depth_onccN": {
 		"scope": "sfz",
 		"prefix": "amplfo_depth_onccN",
-		"body": "amplfo_depth_oncc${1:N}=0$0",
+		"body": "amplfo_depth_oncc${N}=0$0",
 		"description": "amplfo_depthccN alias. Type: float | Range: -10 to 10 dB"
 	},
 	"SFZv2 bend_smooth": {
 		"scope": "sfz",
 		"prefix": "bend_smooth",
 		"body": "bend_smooth=0$0",
-		"description": "Pitch bend smoothness. Adds “inertia” to pitch bends, so fast movements of the pitch bend wheel will have a delayed effect on the pitch change. Type: float | Range: 0 to  ms"
+		"description": "Pitch bend smoothness. Adds 'inertia' to pitch bends, so fast movements of the pitch bend wheel will have a delayed effect on the pitch change. Type: float"
 	},
 	"SFZv2 bend_stepdown": {
 		"scope": "sfz",
@@ -1278,13 +1278,13 @@
 	"SFZv2 cutoff_curveccN": {
 		"scope": "sfz",
 		"prefix": "cutoff_curveccN",
-		"body": "cutoff_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255 cents"
+		"body": "cutoff_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255 cents"
 	},
 	"SFZv2 cutoff_onccN": {
 		"scope": "sfz",
 		"prefix": "cutoff_onccN",
-		"body": "cutoff_oncc${1:N}=0$0",
+		"body": "cutoff_oncc${N}=0$0",
 		"description": "cutoff_ccN alias. Type: integer | Range: -9600 to 9600 cents"
 	},
 	"SFZv2 cutoff_random": {
@@ -1296,98 +1296,91 @@
 	"SFZv2 cutoff_smoothccN": {
 		"scope": "sfz",
 		"prefix": "cutoff_smoothccN",
-		"body": "cutoff_smoothcc${1:N}=0$0",
-		"description": " Type: float | Range: 0 to  ms"
+		"body": "cutoff_smoothcc${N}=0$0",
+		"description": "Type: float"
 	},
 	"SFZv2 cutoff_stepccN": {
 		"scope": "sfz",
 		"prefix": "cutoff_stepccN",
-		"body": "cutoff_stepcc${1:N}=0$0",
-		"description": " Type: integer | Range: 0 to"
+		"body": "cutoff_stepcc${N}=0$0",
+		"description": "Type: integer"
 	},
 	"SFZv2 cutoff2_ccN": {
 		"scope": "sfz",
 		"prefix": "cutoff2_ccN",
-		"body": "cutoff2_cc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "cutoff2_cc${N}=$0"
 	},
 	"SFZv2 cutoff2_chanaft": {
 		"scope": "sfz",
 		"prefix": "cutoff2_chanaft",
-		"body": "cutoff2_chanaft=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "cutoff2_chanaft=$0"
 	},
 	"SFZv2 cutoff2_curveccN": {
 		"scope": "sfz",
 		"prefix": "cutoff2_curveccN",
-		"body": "cutoff2_curvecc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "cutoff2_curvecc${N}=$0"
 	},
 	"SFZv2 cutoff2_onccN": {
 		"scope": "sfz",
 		"prefix": "cutoff2_onccN",
-		"body": "cutoff2_oncc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "cutoff2_oncc${N}=$0"
 	},
 	"SFZv2 cutoff2_polyaft": {
 		"scope": "sfz",
 		"prefix": "cutoff2_polyaft",
-		"body": "cutoff2_polyaft=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "cutoff2_polyaft=$0"
 	},
 	"SFZv2 cutoff2_smoothccN": {
 		"scope": "sfz",
 		"prefix": "cutoff2_smoothccN",
-		"body": "cutoff2_smoothcc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "cutoff2_smoothcc${N}=$0"
 	},
 	"SFZv2 cutoff2_stepccN": {
 		"scope": "sfz",
 		"prefix": "cutoff2_stepccN",
-		"body": "cutoff2_stepcc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "cutoff2_stepcc${N}=$0"
 	},
 	"SFZv2 cutoff2": {
 		"scope": "sfz",
 		"prefix": "cutoff2",
-		"body": "cutoff2=filter disabled$0",
+		"body": "cutoff2=$0",
 		"description": "cutoff alias. Type: float | Range: 0 to SampleRate / 2 Hz"
 	},
 	"SFZv2 default_path": {
 		"scope": "sfz",
 		"prefix": "default_path",
 		"body": "default_path=$0",
-		"description": "Default file path. Type: string | Range: N/A"
+		"description": "Default file path. Type: string"
 	},
 	"SFZv2 #define": {
 		"scope": "sfz",
 		"prefix": "#define",
-		"body": "#define=$0",
-		"description": "Creates a variable and gives it a value. Type: string | Range: N/A"
+		"body": "#define $${NAME} ${value}",
+		"description": "Creates a variable and gives it a value. Type: string"
 	},
 	"SFZv2 delay_beats": {
 		"scope": "sfz",
 		"prefix": "delay_beats",
 		"body": "delay_beats=$0",
-		"description": "Delays the start of the region until a certain amount of musical beats are passed. Type: float | Range: N/A"
+		"description": "Delays the start of the region until a certain amount of musical beats are passed. Type: float"
 	},
 	"SFZv2 delay_onccN": {
 		"scope": "sfz",
 		"prefix": "delay_onccN",
-		"body": "delay_oncc${1:N}=0$0",
+		"body": "delay_oncc${N}=0$0",
 		"description": "delay_ccN alias. Type: float | Range: 0 to 100 seconds"
 	},
 	"SFZv2 delay_samples_onccN": {
 		"scope": "sfz",
 		"prefix": "delay_samples_onccN",
-		"body": "delay_samples_oncc${1:N}=$0",
-		"description": " Type: integer | Range: N/A"
+		"body": "delay_samples_oncc${N}=$0",
+		"description": "Type: integer"
 	},
 	"SFZv2 delay_samples": {
 		"scope": "sfz",
 		"prefix": "delay_samples",
 		"body": "delay_samples=$0",
-		"description": "Allows the region playback to be postponed for the specified time, measured in samples (and therefore dependent on current sample rate). Type: integer | Range: N/A"
+		"description": "Allows the region playback to be postponed for the specified time, measured in samples (and therefore dependent on current sample rate). Type: integer"
 	},
 	"SFZv2 direction": {
 		"scope": "sfz",
@@ -1410,259 +1403,226 @@
 	"SFZv2 egN_amplitude_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_amplitude_onccX",
-		"body": "egN_amplitude_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_amplitude_oncc${X}=$0"
 	},
 	"SFZv2 egN_amplitude": {
 		"scope": "sfz",
 		"prefix": "egN_amplitude",
-		"body": "egN_amplitude=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_amplitude=$0"
 	},
 	"SFZv2 egN_curveX": {
 		"scope": "sfz",
 		"prefix": "egN_curveX",
-		"body": "egN_curveX=$0",
-		"description": "Instructs the player to use a curve shape defined under a curve header for the specified envelope segment. Type:  | Range: N/A"
+		"body": "eg${N}_curve${X}=$0",
+		"description": "Instructs the player to use a curve shape defined under a curve header for the specified envelope segment."
 	},
 	"SFZv2 egN_cutoff_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_cutoff_onccX",
-		"body": "egN_cutoff_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_cutoff_oncc${X}=$0"
 	},
 	"SFZv2 egN_cutoff": {
 		"scope": "sfz",
 		"prefix": "egN_cutoff",
-		"body": "egN_cutoff=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_cutoff=$0"
 	},
 	"SFZv2 egN_cutoff2_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_cutoff2_onccX",
-		"body": "egN_cutoff2_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_cutoff2_oncc${X}=$0"
 	},
 	"SFZv2 egN_cutoff2": {
 		"scope": "sfz",
 		"prefix": "egN_cutoff2",
-		"body": "egN_cutoff2=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_cutoff2=$0"
 	},
 	"SFZv2 egN_depth_lfoX": {
 		"scope": "sfz",
 		"prefix": "egN_depth_lfoX",
-		"body": "egN_depth_lfoX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_depth_lfo${X}=$0"
 	},
 	"SFZv2 egN_depthadd_lfoX": {
 		"scope": "sfz",
 		"prefix": "egN_depthadd_lfoX",
-		"body": "egN_depthadd_lfoX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_depthadd_lfo${X}=$0"
 	},
 	"SFZv2 egN_eqXbw_onccY": {
 		"scope": "sfz",
 		"prefix": "egN_eqXbw_onccY",
-		"body": "egN_eqXbw_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_eq${1|1,2,3|}bw_oncc${Y}=$0"
 	},
 	"SFZv2 egN_eqXbw": {
 		"scope": "sfz",
 		"prefix": "egN_eqXbw",
-		"body": "egN_eqXbw=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_eq${1|1,2,3|}bw=$0"
 	},
 	"SFZv2 egN_eqXfreq_onccY": {
 		"scope": "sfz",
 		"prefix": "egN_eqXfreq_onccY",
-		"body": "egN_eqXfreq_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_eq${1|1,2,3|}freq_oncc${Y}=$0"
 	},
 	"SFZv2 egN_eqXfreq": {
 		"scope": "sfz",
 		"prefix": "egN_eqXfreq",
-		"body": "egN_eqXfreq=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_eq${1|1,2,3|}freq=$0"
 	},
 	"SFZv2 egN_eqXgain_onccY": {
 		"scope": "sfz",
 		"prefix": "egN_eqXgain_onccY",
-		"body": "egN_eqXgain_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_eq${1|1,2,3|}gain_oncc${Y}=$0"
 	},
 	"SFZv2 egN_eqXgain": {
 		"scope": "sfz",
 		"prefix": "egN_eqXgain",
-		"body": "egN_eqXgain=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_eq${1|1,2,3|}gain=$0"
 	},
 	"SFZv2 egN_freq_lfoX": {
 		"scope": "sfz",
 		"prefix": "egN_freq_lfoX",
-		"body": "egN_freq_lfoX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_freq_lfo${X}=$0"
 	},
 	"SFZv2 egN_levelX_onccY": {
 		"scope": "sfz",
 		"prefix": "egN_levelX_onccY",
-		"body": "egN_levelX_onccY=0$0",
-		"description": " Type: float | Range: -1 to 1"
+		"body": "eg${N}_level${X}_oncc${Y}=0$0",
+		"description": "Type: float | Range: -1 to 1"
 	},
 	"SFZv2 egN_levelX": {
 		"scope": "sfz",
 		"prefix": "egN_levelX",
-		"body": "egN_levelX=0$0",
+		"body": "eg${N}_level${X}=0$0",
 		"description": "Sets the envelope level at a specific point in envelope number N. Type: float | Range: -1 to 1"
 	},
 	"SFZv2 egN_loop_count": {
 		"scope": "sfz",
 		"prefix": "egN_loop_count",
-		"body": "egN_loop_count=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_loop_count=$0"
 	},
 	"SFZv2 egN_loop": {
 		"scope": "sfz",
 		"prefix": "egN_loop",
-		"body": "egN_loop=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_loop=$0"
 	},
 	"SFZv2 egN_pan_curve": {
 		"scope": "sfz",
 		"prefix": "egN_pan_curve",
-		"body": "egN_pan_curve=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_pan_curve=$0"
 	},
 	"SFZv2 egN_pan_curveccX": {
 		"scope": "sfz",
 		"prefix": "egN_pan_curveccX",
-		"body": "egN_pan_curveccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_pan_curvecc${X}=$0"
 	},
 	"SFZv2 egN_pan_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_pan_onccX",
-		"body": "egN_pan_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_pan_oncc${X}=$0"
 	},
 	"SFZv2 egN_pan": {
 		"scope": "sfz",
 		"prefix": "egN_pan",
-		"body": "egN_pan=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_pan=$0"
 	},
 	"SFZv2 egN_pitch_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_pitch_onccX",
-		"body": "egN_pitch_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_pitch_oncc${X}=$0"
 	},
 	"SFZv2 egN_pitch": {
 		"scope": "sfz",
 		"prefix": "egN_pitch",
-		"body": "egN_pitch=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_pitch=$0"
 	},
 	"SFZv2 egN_points": {
 		"scope": "sfz",
 		"prefix": "egN_points",
-		"body": "egN_points=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_points=$0"
 	},
 	"SFZv2 egN_resonance_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_resonance_onccX",
-		"body": "egN_resonance_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_resonance_oncc${X}=$0"
 	},
 	"SFZv2 egN_resonance": {
 		"scope": "sfz",
 		"prefix": "egN_resonance",
-		"body": "egN_resonance=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_resonance=$0"
 	},
 	"SFZv2 egN_resonance2_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_resonance2_onccX",
-		"body": "egN_resonance2_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_resonance2_oncc${X}=$0"
 	},
 	"SFZv2 egN_resonance2": {
 		"scope": "sfz",
 		"prefix": "egN_resonance2",
-		"body": "egN_resonance2=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_resonance2=$0"
 	},
 	"SFZv2 egN_shapeX": {
 		"scope": "sfz",
 		"prefix": "egN_shapeX",
-		"body": "egN_shapeX=0$0",
-		"description": " Type: float | Range: N/A"
+		"body": "eg${N}_shape${X}=0$0",
+		"description": "Type: float"
 	},
 	"SFZv2 egN_sustain": {
 		"scope": "sfz",
 		"prefix": "egN_sustain",
-		"body": "egN_sustain=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_sustain=$0"
 	},
 	"SFZv2 egN_timeX_onccY": {
 		"scope": "sfz",
 		"prefix": "egN_timeX_onccY",
-		"body": "egN_timeX_onccY=$0",
-		"description": " Type: float | Range: N/A"
+		"body": "eg${N}_time${X}_oncc${Y}=$0",
+		"description": "Type: float"
 	},
 	"SFZv2 egN_timeX": {
 		"scope": "sfz",
 		"prefix": "egN_timeX",
-		"body": "egN_timeX=$0",
-		"description": " Type: float | Range: N/A"
+		"body": "eg${N}_time${X}=$0",
+		"description": "Type: float"
 	},
 	"SFZv2 egN_volume_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_volume_onccX",
-		"body": "egN_volume_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_volume_oncc${X}=$0"
 	},
 	"SFZv2 egN_volume": {
 		"scope": "sfz",
 		"prefix": "egN_volume",
-		"body": "egN_volume=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_volume=$0"
 	},
 	"SFZv2 egN_width_onccX": {
 		"scope": "sfz",
 		"prefix": "egN_width_onccX",
-		"body": "egN_width_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_width_oncc${X}=$0"
 	},
 	"SFZv2 egN_width": {
 		"scope": "sfz",
 		"prefix": "egN_width",
-		"body": "egN_width=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_width=$0"
 	},
 	"SFZv2 eqN_bw_onccX": {
 		"scope": "sfz",
 		"prefix": "eqN_bw_onccX",
-		"body": "eqN_bw_onccX=0$0",
+		"body": "eq${1|1,2,3|}_bw_oncc${X}=0$0",
 		"description": "eqN_bwccX alias. Type: float | Range: -4 to 4 octaves"
 	},
 	"SFZv2 eqN_freq_onccX": {
 		"scope": "sfz",
 		"prefix": "eqN_freq_onccX",
-		"body": "eqN_freq_onccX=0$0",
+		"body": "eq${1|1,2,3|}_freq_oncc${X}=0$0",
 		"description": "eqN_freqccX alias. Type: float | Range: -30000 to 30000 Hz"
 	},
 	"SFZv2 eqN_gain_onccX": {
 		"scope": "sfz",
 		"prefix": "eqN_gain_onccX",
-		"body": "eqN_gain_onccX=0$0",
+		"body": "eq${1|1,2,3|}_gain_oncc${X}=0$0",
 		"description": "eqN_gainccX alias. Type: float | Range: -96 to 24 dB"
 	},
 	"SFZv2 eqN_type": {
 		"scope": "sfz",
 		"prefix": "eqN_type",
-		"body": "eqN_type=peak$0",
+		"body": "eq${1|1,2,3|}_type=${2|peak,lshelf,hshelf|}$0",
 		"description": "Sets the type of EQ filter. Type: string | Range: peak, lshelf, hshelf"
 	},
 	"SFZv2 fil2_keycenter": {
@@ -1692,13 +1652,13 @@
 	"SFZv2 fillfo_depth_onccN": {
 		"scope": "sfz",
 		"prefix": "fillfo_depth_onccN",
-		"body": "fillfo_depth_oncc${1:N}=0$0",
+		"body": "fillfo_depth_oncc${N}=0$0",
 		"description": "fillfo_depthccN alias. Type: float | Range: -1200 to 1200 cents"
 	},
 	"SFZv2 gain_onccN": {
 		"scope": "sfz",
 		"prefix": "gain_onccN",
-		"body": "gain_oncc${1:N}=0$0",
+		"body": "gain_oncc${N}=0$0",
 		"description": "gain_ccN alias. Type: float | Range: -144 to 48 dB"
 	},
 	"SFZv2 hiprog": {
@@ -1711,433 +1671,376 @@
 		"scope": "sfz",
 		"prefix": "hitimer",
 		"body": "hitimer=$0",
-		"description": "Region plays if timer is between lotimer and hitimer. Type: float | Range: N/A"
+		"description": "Region plays if timer is between lotimer and hitimer. Type: float"
 	},
 	"SFZv2 lfoN_amplitude_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_amplitude_onccX",
-		"body": "lfoN_amplitude_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_amplitude_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_amplitude_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_amplitude_smoothccX",
-		"body": "lfoN_amplitude_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_amplitude_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_amplitude_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_amplitude_stepccX",
-		"body": "lfoN_amplitude_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_amplitude_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_amplitude": {
 		"scope": "sfz",
 		"prefix": "lfoN_amplitude",
-		"body": "lfoN_amplitude=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_amplitude=$0"
 	},
 	"SFZv2 lfoN_count": {
 		"scope": "sfz",
 		"prefix": "lfoN_count",
-		"body": "lfoN_count=$0",
-		"description": "Number of LFO repetitions for LFO N before the LFO stops. Type: integer | Range: N/A"
+		"body": "lfo${N}_count=$0",
+		"description": "Number of LFO repetitions for LFO N before the LFO stops. Type: integer"
 	},
 	"SFZv2 lfoN_cutoff_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff_onccX",
-		"body": "lfoN_cutoff_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_cutoff_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff_smoothccX",
-		"body": "lfoN_cutoff_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_cutoff_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff_stepccX",
-		"body": "lfoN_cutoff_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_cutoff": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff",
-		"body": "lfoN_cutoff=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff=$0"
 	},
 	"SFZv2 lfoN_cutoff2_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff2_onccX",
-		"body": "lfoN_cutoff2_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff2_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_cutoff2_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff2_smoothccX",
-		"body": "lfoN_cutoff2_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff2_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_cutoff2_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff2_stepccX",
-		"body": "lfoN_cutoff2_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff2_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_cutoff2": {
 		"scope": "sfz",
 		"prefix": "lfoN_cutoff2",
-		"body": "lfoN_cutoff2=$0",
-		"description": "lfoN_cutoff alias. Type:  | Range: N/A"
+		"body": "lfo${N}_cutoff2=$0",
+		"description": "lfoN_cutoff alias."
 	},
 	"SFZv2 lfoN_delay_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_delay_onccX",
-		"body": "lfoN_delay_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_delay_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_delay": {
 		"scope": "sfz",
 		"prefix": "lfoN_delay",
-		"body": "lfoN_delay=0$0",
-		"description": "Onset delay for LFO number N. Type: float | Range: N/A"
+		"body": "lfo${N}_delay=0$0",
+		"description": "Onset delay for LFO number N. Type: float"
 	},
 	"SFZv2 lfoN_depth_lfoX": {
 		"scope": "sfz",
 		"prefix": "lfoN_depth_lfoX",
-		"body": "lfoN_depth_lfoX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_depth_lfo${X}=$0"
 	},
 	"SFZv2 lfoN_depthadd_lfoX": {
 		"scope": "sfz",
 		"prefix": "lfoN_depthadd_lfoX",
-		"body": "lfoN_depthadd_lfoX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_depthadd_lfo${X}=$0"
 	},
 	"SFZv2 lfoN_eqXbw_onccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXbw_onccY",
-		"body": "lfoN_eqXbw_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}bw_oncc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXbw_smoothccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXbw_smoothccY",
-		"body": "lfoN_eqXbw_smoothccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}bw_smoothcc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXbw_stepccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXbw_stepccY",
-		"body": "lfoN_eqXbw_stepccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}bw_stepcc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXbw": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXbw",
-		"body": "lfoN_eqXbw=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}bw=$0"
 	},
 	"SFZv2 lfoN_eqXfreq_onccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXfreq_onccY",
-		"body": "lfoN_eqXfreq_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}freq_oncc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXfreq_smoothccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXfreq_smoothccY",
-		"body": "lfoN_eqXfreq_smoothccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}freq_smoothcc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXfreq_stepccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXfreq_stepccY",
-		"body": "lfoN_eqXfreq_stepccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}freq_stepcc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXfreq": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXfreq",
-		"body": "lfoN_eqXfreq=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}freq=$0"
 	},
 	"SFZv2 lfoN_eqXgain_onccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXgain_onccY",
-		"body": "lfoN_eqXgain_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}gain_oncc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXgain_smoothccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXgain_smoothccY",
-		"body": "lfoN_eqXgain_smoothccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}gain_smoothcc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXgain_stepccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXgain_stepccY",
-		"body": "lfoN_eqXgain_stepccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}gain_stepcc${Y}=$0"
 	},
 	"SFZv2 lfoN_eqXgain": {
 		"scope": "sfz",
 		"prefix": "lfoN_eqXgain",
-		"body": "lfoN_eqXgain=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_eq${1|1,2,3|}gain=$0"
 	},
 	"SFZv2 lfoN_fade_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_fade_onccX",
-		"body": "lfoN_fade_onccX=$0",
-		"description": " Type: float | Range: N/A"
+		"body": "lfo${N}_fade_oncc${X}=$0",
+		"description": "Type: float"
 	},
 	"SFZv2 lfoN_fade": {
 		"scope": "sfz",
 		"prefix": "lfoN_fade",
-		"body": "lfoN_fade=$0",
-		"description": "Fade-in time for LFO number N. Type: float | Range: N/A"
+		"body": "lfo${N}_fade=$0",
+		"description": "Fade-in time for LFO number N. Type: float"
 	},
 	"SFZv2 lfoN_freq_lfoX": {
 		"scope": "sfz",
 		"prefix": "lfoN_freq_lfoX",
-		"body": "lfoN_freq_lfoX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_freq_lfo${X}=$0"
 	},
 	"SFZv2 lfoN_freq_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_freq_onccX",
-		"body": "lfoN_freq_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_freq_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_freq_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_freq_smoothccX",
-		"body": "lfoN_freq_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_freq_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_freq_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_freq_stepccX",
-		"body": "lfoN_freq_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_freq_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_freq": {
 		"scope": "sfz",
 		"prefix": "lfoN_freq",
-		"body": "lfoN_freq=$0",
-		"description": "The base frequency of LFO number N, in Hertz. Type: float | Range: N/A"
+		"body": "lfo${N}_freq=$0",
+		"description": "The base frequency of LFO number N, in Hertz. Type: float"
 	},
 	"SFZv2 lfoN_pan_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_pan_onccX",
-		"body": "lfoN_pan_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pan_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_pan_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_pan_smoothccX",
-		"body": "lfoN_pan_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pan_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_pan_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_pan_stepccX",
-		"body": "lfoN_pan_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pan_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_pan": {
 		"scope": "sfz",
 		"prefix": "lfoN_pan",
-		"body": "lfoN_pan=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pan=$0"
 	},
 	"SFZv2 lfoN_phase_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_phase_onccX",
-		"body": "lfoN_phase_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_phase_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_phase": {
 		"scope": "sfz",
 		"prefix": "lfoN_phase",
-		"body": "lfoN_phase=0$0",
+		"body": "lfo${N}_phase=0$0",
 		"description": "Initial phase shift for LFO number N. Type: float | Range: 0 to 1"
 	},
 	"SFZv2 lfoN_pitch_curveccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_pitch_curveccX",
-		"body": "lfoN_pitch_curveccX=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "lfo${N}_pitch_curvecc${X}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"SFZv2 lfoN_pitch_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_pitch_onccX",
-		"body": "lfoN_pitch_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pitch_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_pitch_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_pitch_smoothccX",
-		"body": "lfoN_pitch_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pitch_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_pitch_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_pitch_stepccX",
-		"body": "lfoN_pitch_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pitch_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_pitch": {
 		"scope": "sfz",
 		"prefix": "lfoN_pitch",
-		"body": "lfoN_pitch=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_pitch=$0"
 	},
 	"SFZv2 lfoN_resonance_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance_onccX",
-		"body": "lfoN_resonance_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_resonance_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_resonance_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance_smoothccX",
-		"body": "lfoN_resonance_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_resonance_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_resonance_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance_stepccX",
-		"body": "lfoN_resonance_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_resonance_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_resonance": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance",
-		"body": "lfoN_resonance=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_resonance=$0"
 	},
 	"SFZv2 lfoN_resonance2_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance2_onccX",
-		"body": "lfoN_resonance2_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_resonance2_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_resonance2_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance2_smoothccX",
-		"body": "lfoN_resonance2_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_resonance2_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_resonance2_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance2_stepccX",
-		"body": "lfoN_resonance2_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_resonance2_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_resonance2": {
 		"scope": "sfz",
 		"prefix": "lfoN_resonance2",
-		"body": "lfoN_resonance2=$0",
-		"description": "lfoN_resonance alias. Type:  | Range: N/A"
+		"body": "lfo${N}_resonance2=$0",
+		"description": "lfoN_resonance alias."
 	},
 	"SFZv2 lfoN_smooth_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_smooth_onccX",
-		"body": "lfoN_smooth_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_smooth_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_smooth": {
 		"scope": "sfz",
 		"prefix": "lfoN_smooth",
-		"body": "lfoN_smooth=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_smooth=$0"
 	},
 	"SFZv2 lfoN_steps": {
 		"scope": "sfz",
 		"prefix": "lfoN_steps",
-		"body": "lfoN_steps=$0",
-		"description": "Number of steps in LFO step sequencer. Type: integer | Range: N/A"
+		"body": "lfo${N}_steps=$0",
+		"description": "Number of steps in LFO step sequencer. Type: integer"
 	},
 	"SFZv2 lfoN_stepX_onccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_stepX_onccY",
-		"body": "lfoN_stepX_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_step${X}_oncc${Y}=$0"
 	},
 	"SFZv2 lfoN_stepX": {
 		"scope": "sfz",
 		"prefix": "lfoN_stepX",
-		"body": "lfoN_stepX=$0",
+		"body": "lfo${N}_step${X}=$0",
 		"description": "Level of the step number X in LFO step sequencer. Type: float | Range: -100 to 100 percent"
 	},
 	"SFZv2 lfoN_volume_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_volume_onccX",
-		"body": "lfoN_volume_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_volume_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_volume_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_volume_smoothccX",
-		"body": "lfoN_volume_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_volume_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_volume_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_volume_stepccX",
-		"body": "lfoN_volume_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_volume_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_volume": {
 		"scope": "sfz",
 		"prefix": "lfoN_volume",
-		"body": "lfoN_volume=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_volume=$0"
 	},
 	"SFZv2 lfoN_wave": {
 		"scope": "sfz",
 		"prefix": "lfoN_wave",
-		"body": "lfoN_wave=1$0",
-		"description": "LFO waveform selection. Type: integer | Range: N/A"
+		"body": "lfo${N}_wave=1$0",
+		"description": "LFO waveform selection. Type: integer"
 	},
 	"SFZv2 lfoN_width_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_width_onccX",
-		"body": "lfoN_width_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_width_oncc${X}=$0"
 	},
 	"SFZv2 lfoN_width_smoothccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_width_smoothccX",
-		"body": "lfoN_width_smoothccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_width_smoothcc${X}=$0"
 	},
 	"SFZv2 lfoN_width_stepccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_width_stepccX",
-		"body": "lfoN_width_stepccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_width_stepcc${X}=$0"
 	},
 	"SFZv2 lfoN_width": {
 		"scope": "sfz",
 		"prefix": "lfoN_width",
-		"body": "lfoN_width=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_width=$0"
 	},
 	"SFZv2 loop_count": {
 		"scope": "sfz",
 		"prefix": "loop_count",
 		"body": "loop_count=$0",
-		"description": "The number of times a loop will repeat. Type: integer | Range: N/A"
+		"description": "The number of times a loop will repeat. Type: integer"
 	},
 	"SFZv2 loop_crossfade": {
 		"scope": "sfz",
 		"prefix": "loop_crossfade",
 		"body": "loop_crossfade=$0",
-		"description": "Loop cross fade. Type: float | Range: N/A"
+		"description": "Loop cross fade. Type: float"
 	},
 	"SFZv2 loop_type": {
 		"scope": "sfz",
@@ -2155,25 +2058,25 @@
 		"scope": "sfz",
 		"prefix": "lotimer",
 		"body": "lotimer=$0",
-		"description": "Region plays if timer is between lotimer and hitimer. Type: float | Range: N/A"
+		"description": "Region plays if timer is between lotimer and hitimer. Type: float"
 	},
 	"SFZv2 md5": {
 		"scope": "sfz",
 		"prefix": "md5",
 		"body": "md5=null$0",
-		"description": "Calculates the MD5 digital fingerprint hash of a sample file, represented as a sequence of 32 hexadecimal digits. Type: string | Range: N/A"
+		"description": "Calculates the MD5 digital fingerprint hash of a sample file, represented as a sequence of 32 hexadecimal digits. Type: string"
 	},
 	"SFZv2 note_offset": {
 		"scope": "sfz",
 		"prefix": "note_offset",
 		"body": "note_offset=$0",
-		"description": "Tells SFZ to shift all incoming MIDI data by the specified number of notes. Type: integer | Range: N/A"
+		"description": "Tells SFZ to shift all incoming MIDI data by the specified number of notes. Type: integer"
 	},
 	"SFZv2 note_polyphony": {
 		"scope": "sfz",
 		"prefix": "note_polyphony",
 		"body": "note_polyphony=$0",
-		"description": "Polyphony limit for playing the same note repeatedly. Type: integer | Range: N/A"
+		"description": "Polyphony limit for playing the same note repeatedly. Type: integer"
 	},
 	"SFZv2 note_selfmask": {
 		"scope": "sfz",
@@ -2185,12 +2088,12 @@
 		"scope": "sfz",
 		"prefix": "octave_offset",
 		"body": "octave_offset=$0",
-		"description": "Shifts all incoming MIDI data by the specified octave. Type: integer | Range: N/A"
+		"description": "Shifts all incoming MIDI data by the specified octave. Type: integer"
 	},
 	"SFZv2 offset_onccN": {
 		"scope": "sfz",
 		"prefix": "offset_onccN",
-		"body": "offset_oncc${1:N}=0$0",
+		"body": "offset_oncc${N}=0$0",
 		"description": "offset_ccN alias. Type: integer | Range: 0 to 4294967296 sample units"
 	},
 	"SFZv2 pan_keycenter": {
@@ -2220,98 +2123,97 @@
 	"SFZv2 pitch_curveccN": {
 		"scope": "sfz",
 		"prefix": "pitch_curveccN",
-		"body": "pitch_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "pitch_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"SFZv2 pitch_onccN": {
 		"scope": "sfz",
 		"prefix": "pitch_onccN",
-		"body": "pitch_oncc${1:N}=$0",
-		"description": " Type:  | Range: -9600 to 9600 cents"
+		"body": "pitch_oncc${N}=$0",
+		"description": "Type:  | Range: -9600 to 9600 cents"
 	},
 	"SFZv2 pitch_smoothccN": {
 		"scope": "sfz",
 		"prefix": "pitch_smoothccN",
-		"body": "pitch_smoothcc${1:N}=0$0",
-		"description": " Type: float | Range: 0 to  ms"
+		"body": "pitch_smoothcc${N}=0$0",
+		"description": "Type: float"
 	},
 	"SFZv2 pitch_stepccN": {
 		"scope": "sfz",
 		"prefix": "pitch_stepccN",
-		"body": "pitch_stepcc${1:N}=0$0",
-		"description": " Type:  | Range: 0 to"
+		"body": "pitch_stepcc${N}=0$0"
 	},
 	"SFZv2 pitchlfo_depth_onccN": {
 		"scope": "sfz",
 		"prefix": "pitchlfo_depth_onccN",
-		"body": "pitchlfo_depth_oncc${1:N}=0$0",
+		"body": "pitchlfo_depth_oncc${N}=0$0",
 		"description": "pitchlfo_depthccN alias. Type: float | Range: -1200 to 1200 cents"
 	},
 	"SFZv2 polyphony": {
 		"scope": "sfz",
 		"prefix": "polyphony",
 		"body": "polyphony=$0",
-		"description": "Polyphony voice limit. Type: integer | Range: N/A"
+		"description": "Polyphony voice limit. Type: integer"
 	},
 	"SFZv2 resonance_ccN": {
 		"scope": "sfz",
 		"prefix": "resonance_ccN",
-		"body": "resonance_cc${1:N}=0$0",
+		"body": "resonance_cc${N}=0$0",
 		"description": "resonance_onccN alias. Type: float | Range: 0 to 40 dB"
 	},
 	"SFZv2 resonance_curveccN": {
 		"scope": "sfz",
 		"prefix": "resonance_curveccN",
-		"body": "resonance_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "resonance_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"SFZv2 resonance_onccN": {
 		"scope": "sfz",
 		"prefix": "resonance_onccN",
-		"body": "resonance_oncc${1:N}=0$0",
-		"description": " Type: float | Range: 0 to 40 dB"
+		"body": "resonance_oncc${N}=0$0",
+		"description": "Type: float | Range: 0 to 40 dB"
 	},
 	"SFZv2 resonance_smoothccN": {
 		"scope": "sfz",
 		"prefix": "resonance_smoothccN",
-		"body": "resonance_smoothcc${1:N}=0$0",
-		"description": " Type: float | Range: 0 to  ms"
+		"body": "resonance_smoothcc${N}=0$0",
+		"description": "Type: float"
 	},
 	"SFZv2 resonance_stepccN": {
 		"scope": "sfz",
 		"prefix": "resonance_stepccN",
-		"body": "resonance_stepcc${1:N}=0$0",
-		"description": " Type: integer | Range: 0 to"
+		"body": "resonance_stepcc${N}=0$0",
+		"description": "Type: integer"
 	},
 	"SFZv2 resonance2_ccN": {
 		"scope": "sfz",
 		"prefix": "resonance2_ccN",
-		"body": "resonance2_cc${1:N}=0$0",
+		"body": "resonance2_cc${N}=0$0",
 		"description": "resonance2_onccN alias. Type: float | Range: 0 to 40 dB"
 	},
 	"SFZv2 resonance2_curveccN": {
 		"scope": "sfz",
 		"prefix": "resonance2_curveccN",
-		"body": "resonance2_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "resonance2_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"SFZv2 resonance2_onccN": {
 		"scope": "sfz",
 		"prefix": "resonance2_onccN",
-		"body": "resonance2_oncc${1:N}=0$0",
-		"description": " Type: float | Range: 0 to 40 dB"
+		"body": "resonance2_oncc${N}=0$0",
+		"description": "Type: float | Range: 0 to 40 dB"
 	},
 	"SFZv2 resonance2_smoothccN": {
 		"scope": "sfz",
 		"prefix": "resonance2_smoothccN",
-		"body": "resonance2_smoothcc${1:N}=0$0",
-		"description": " Type: float | Range: 0 to  ms"
+		"body": "resonance2_smoothcc${N}=0$0",
+		"description": "Type: float"
 	},
 	"SFZv2 resonance2_stepccN": {
 		"scope": "sfz",
 		"prefix": "resonance2_stepccN",
-		"body": "resonance2_stepcc${1:N}=0$0",
-		"description": " Type: integer | Range: 0 to"
+		"body": "resonance2_stepcc${N}=0$0",
+		"description": "Type: integer"
 	},
 	"SFZv2 resonance2": {
 		"scope": "sfz",
@@ -2322,13 +2224,13 @@
 	"SFZv2 reverse_hiccN": {
 		"scope": "sfz",
 		"prefix": "reverse_hiccN",
-		"body": "reverse_hicc${1:N}=$0",
+		"body": "reverse_hicc${N}=$0",
 		"description": "If MIDI CC N is between reverse_loccN and reverse_hiccN, the region plays reversed. Type: integer | Range: 0 to 127"
 	},
 	"SFZv2 reverse_loccN": {
 		"scope": "sfz",
 		"prefix": "reverse_loccN",
-		"body": "reverse_locc${1:N}=$0",
+		"body": "reverse_locc${N}=$0",
 		"description": "If MIDI CC N is between reverse_loccN and reverse_hiccN, the region plays reversed. Type: integer | Range: 0 to 127"
 	},
 	"SFZv2 rt_dead": {
@@ -2340,7 +2242,7 @@
 	"SFZv2 set_ccN": {
 		"scope": "sfz",
 		"prefix": "set_ccN",
-		"body": "set_cc${1:N}=$0",
+		"body": "set_cc${N}=$0",
 		"description": "Sets a default initial value for MIDI CC number N, when the instrument is initially loaded. Type: integer | Range: 0 to 127"
 	},
 	"SFZv2 sostenuto_sw": {
@@ -2352,31 +2254,31 @@
 	"SFZv2 start_hiccN": {
 		"scope": "sfz",
 		"prefix": "start_hiccN",
-		"body": "start_hicc${1:N}=-1$0",
+		"body": "start_hicc${N}=-1$0",
 		"description": "on_hiccN alias. Type: integer | Range: 0 to 127"
 	},
 	"SFZv2 start_loccN": {
 		"scope": "sfz",
 		"prefix": "start_loccN",
-		"body": "start_locc${1:N}=-1$0",
+		"body": "start_locc${N}=-1$0",
 		"description": "on_loccN alias. Type: integer | Range: 0 to 127"
 	},
 	"SFZv2 stop_beats": {
 		"scope": "sfz",
 		"prefix": "stop_beats",
 		"body": "stop_beats=$0",
-		"description": "Stops a region after a certain amount of beats have played. Type: float | Range: N/A"
+		"description": "Stops a region after a certain amount of beats have played. Type: float"
 	},
 	"SFZv2 stop_hiccN": {
 		"scope": "sfz",
 		"prefix": "stop_hiccN",
-		"body": "stop_hicc${1:N}=-1$0",
+		"body": "stop_hicc${N}=-1$0",
 		"description": "If a MIDI control message with a value between stop_loccN and stop_hiccN is received, the region will stop playing. Default value is -1, it means unassigned. Type: integer | Range: 0 to 127"
 	},
 	"SFZv2 stop_loccN": {
 		"scope": "sfz",
 		"prefix": "stop_loccN",
-		"body": "stop_locc${1:N}=-1$0",
+		"body": "stop_locc${N}=-1$0",
 		"description": "If a MIDI control message with a value between stop_loccN and stop_hiccN is received, the region will stop playing. Default value is -1, it means unassigned. Type: integer | Range: 0 to 127"
 	},
 	"SFZv2 sustain_sw": {
@@ -2401,31 +2303,29 @@
 		"scope": "sfz",
 		"prefix": "vN",
 		"body": "vN=$0",
-		"description": " Type: float | Range: -1 to 1"
+		"description": "Type: float | Range: -1 to 1"
 	},
 	"SFZv2 volume_curveccN": {
 		"scope": "sfz",
 		"prefix": "volume_curveccN",
-		"body": "volume_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "volume_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"SFZv2 volume_onccN": {
 		"scope": "sfz",
 		"prefix": "volume_onccN",
-		"body": "volume_oncc${1:N}=0$0",
+		"body": "volume_oncc${N}=0$0",
 		"description": "gain_ccN alias. Type: float | Range: -144 to 48 dB"
 	},
 	"SFZv2 volume_smoothccN": {
 		"scope": "sfz",
 		"prefix": "volume_smoothccN",
-		"body": "volume_smoothcc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "volume_smoothcc${N}=$0"
 	},
 	"SFZv2 volume_stepccN": {
 		"scope": "sfz",
 		"prefix": "volume_stepccN",
-		"body": "volume_stepcc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "volume_stepcc${N}=$0"
 	},
 	"SFZv2 waveguide": {
 		"scope": "sfz",
@@ -2437,44 +2337,41 @@
 	"ARIA amp_veltrack_ccN": {
 		"scope": "sfz",
 		"prefix": "amp_veltrack_ccN",
-		"body": "amp_veltrack_cc${1:N}=$0",
-		"description": "amp_veltrack_onccN alias. Type:  | Range: N/A"
+		"body": "amp_veltrack_cc${N}=$0",
+		"description": "amp_veltrack_onccN alias."
 	},
 	"ARIA amp_veltrack_curveccN": {
 		"scope": "sfz",
 		"prefix": "amp_veltrack_curveccN",
-		"body": "amp_veltrack_curvecc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "amp_veltrack_curvecc${N}=$0"
 	},
 	"ARIA amp_veltrack_onccN": {
 		"scope": "sfz",
 		"prefix": "amp_veltrack_onccN",
-		"body": "amp_veltrack_oncc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "amp_veltrack_oncc${N}=$0"
 	},
 	"ARIA amp_veltrack_random": {
 		"scope": "sfz",
 		"prefix": "amp_veltrack_random",
-		"body": "amp_veltrack_random=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "amp_veltrack_random=$0"
 	},
 	"ARIA ampeg_attack_shape": {
 		"scope": "sfz",
 		"prefix": "ampeg_attack_shape",
 		"body": "ampeg_attack_shape=0$0",
-		"description": "Specifies the curvature of attack stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of attack stage of the envelope. Type: float"
 	},
 	"ARIA ampeg_decay_curveccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_decay_curveccN",
-		"body": "ampeg_decay_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "ampeg_decay_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"ARIA ampeg_decay_shape": {
 		"scope": "sfz",
 		"prefix": "ampeg_decay_shape",
 		"body": "ampeg_decay_shape=-10.3616$0",
-		"description": "Specifies the curvature of decay stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of decay stage of the envelope. Type: float"
 	},
 	"ARIA ampeg_decay_zero": {
 		"scope": "sfz",
@@ -2491,14 +2388,14 @@
 	"ARIA ampeg_hold_curveccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_hold_curveccN",
-		"body": "ampeg_hold_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "ampeg_hold_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"ARIA ampeg_release_shape": {
 		"scope": "sfz",
 		"prefix": "ampeg_release_shape",
 		"body": "ampeg_release_shape=-10.3616$0",
-		"description": "Specifies the curvature of release stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of release stage of the envelope. Type: float"
 	},
 	"ARIA ampeg_release_zero": {
 		"scope": "sfz",
@@ -2509,32 +2406,31 @@
 	"ARIA ampeg_sustain_curveccN": {
 		"scope": "sfz",
 		"prefix": "ampeg_sustain_curveccN",
-		"body": "ampeg_sustain_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "ampeg_sustain_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"ARIA amplitude_ccN": {
 		"scope": "sfz",
 		"prefix": "amplitude_ccN",
-		"body": "amplitude_cc${1:N}=$0",
+		"body": "amplitude_cc${N}=$0",
 		"description": "amplitude_onccN alias. Type: float | Range: 0 to 100 %"
 	},
 	"ARIA amplitude_curveccN": {
 		"scope": "sfz",
 		"prefix": "amplitude_curveccN",
-		"body": "amplitude_curvecc${1:N}=$0",
-		"description": " Type: integer | Range: 0 to 255"
+		"body": "amplitude_curvecc${N}=$0",
+		"description": "Type: integer | Range: 0 to 255"
 	},
 	"ARIA amplitude_onccN": {
 		"scope": "sfz",
 		"prefix": "amplitude_onccN",
-		"body": "amplitude_oncc${1:N}=$0",
-		"description": " Type: float | Range: 0 to 100 %"
+		"body": "amplitude_oncc${N}=$0",
+		"description": "Type: float | Range: 0 to 100 %"
 	},
 	"ARIA amplitude_smoothccN": {
 		"scope": "sfz",
 		"prefix": "amplitude_smoothccN",
-		"body": "amplitude_smoothcc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "amplitude_smoothcc${N}=$0"
 	},
 	"ARIA amplitude": {
 		"scope": "sfz",
@@ -2557,92 +2453,86 @@
 	"ARIA delay_beats_curveccN": {
 		"scope": "sfz",
 		"prefix": "delay_beats_curveccN",
-		"body": "delay_beats_curvecc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "delay_beats_curvecc${N}=$0"
 	},
 	"ARIA delay_beats_onccN": {
 		"scope": "sfz",
 		"prefix": "delay_beats_onccN",
-		"body": "delay_beats_oncc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "delay_beats_oncc${N}=$0"
 	},
 	"ARIA delay_beats_random": {
 		"scope": "sfz",
 		"prefix": "delay_beats_random",
 		"body": "delay_beats_random=$0",
-		"description": "Delays the start of the region after a random amount of musical beats. Type: float | Range: N/A"
+		"description": "Delays the start of the region after a random amount of musical beats. Type: float"
 	},
 	"ARIA delay_curveccN": {
 		"scope": "sfz",
 		"prefix": "delay_curveccN",
-		"body": "delay_curvecc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "delay_curvecc${N}=$0"
 	},
 	"ARIA egN_ampeg": {
 		"scope": "sfz",
 		"prefix": "egN_ampeg",
-		"body": "egN_ampeg=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "eg${N}_ampeg=$0"
 	},
 	"ARIA eqN_dynamic": {
 		"scope": "sfz",
 		"prefix": "eqN_dynamic",
-		"body": "eqN_dynamic=0$0",
+		"body": "eq${1|1,2,3|}_dynamic=0$0",
 		"description": "Specifies when EQ is recalculated. Type: integer | Range: 0 to 1"
 	},
 	"ARIA fil_gain_onccN": {
 		"scope": "sfz",
 		"prefix": "fil_gain_onccN",
-		"body": "fil_gain_oncc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "fil_gain_oncc${N}=$0"
 	},
 	"ARIA fil_gain": {
 		"scope": "sfz",
 		"prefix": "fil_gain",
 		"body": "fil_gain=0$0",
-		"description": "Gain for lsh, hsh and peq filter types. Type: float | Range: N/A"
+		"description": "Gain for lsh, hsh and peq filter types. Type: float"
 	},
 	"ARIA fil2_gain_onccN": {
 		"scope": "sfz",
 		"prefix": "fil2_gain_onccN",
-		"body": "fil2_gain_oncc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "fil2_gain_oncc${N}=$0"
 	},
 	"ARIA fil2_gain": {
 		"scope": "sfz",
 		"prefix": "fil2_gain",
 		"body": "fil2_gain=0$0",
-		"description": "fil_gain alias. Type: float | Range: N/A"
+		"description": "fil_gain alias. Type: float"
 	},
 	"ARIA fileg_attack_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_attack_onccN",
-		"body": "fileg_attack_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "fileg_attack_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA fileg_attack_shape": {
 		"scope": "sfz",
 		"prefix": "fileg_attack_shape",
 		"body": "fileg_attack_shape=0$0",
-		"description": "Specifies the curvature of attack stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of attack stage of the envelope. Type: float"
 	},
 	"ARIA fileg_attackccN": {
 		"scope": "sfz",
 		"prefix": "fileg_attackccN",
-		"body": "fileg_attackcc${1:N}=0$0",
+		"body": "fileg_attackcc${N}=0$0",
 		"description": "fileg_attack_onccN alias. Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA fileg_decay_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_decay_onccN",
-		"body": "fileg_decay_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "fileg_decay_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"ARIA fileg_decay_shape": {
 		"scope": "sfz",
 		"prefix": "fileg_decay_shape",
 		"body": "fileg_decay_shape=0$0",
-		"description": "Specifies the curvature of decay stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of decay stage of the envelope. Type: float"
 	},
 	"ARIA fileg_decay_zero": {
 		"scope": "sfz",
@@ -2653,31 +2543,31 @@
 	"ARIA fileg_decayccN": {
 		"scope": "sfz",
 		"prefix": "fileg_decayccN",
-		"body": "fileg_decaycc${1:N}=0$0",
+		"body": "fileg_decaycc${N}=0$0",
 		"description": "fileg_decay_onccN alias. Type: float | Range: -100 to 100"
 	},
 	"ARIA fileg_delay_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_delay_onccN",
-		"body": "fileg_delay_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "fileg_delay_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"ARIA fileg_delayccN": {
 		"scope": "sfz",
 		"prefix": "fileg_delayccN",
-		"body": "fileg_delaycc${1:N}=0$0",
+		"body": "fileg_delaycc${N}=0$0",
 		"description": "fileg_delay_onccN alias. Type: float | Range: -100 to 100"
 	},
 	"ARIA fileg_depth_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_depth_onccN",
-		"body": "fileg_depth_oncc${1:N}=0$0",
-		"description": " Type: integer | Range: -12000 to 12000 cents"
+		"body": "fileg_depth_oncc${N}=0$0",
+		"description": "Type: integer | Range: -12000 to 12000 cents"
 	},
 	"ARIA fileg_depthccN": {
 		"scope": "sfz",
 		"prefix": "fileg_depthccN",
-		"body": "fileg_depthcc${1:N}=0$0",
+		"body": "fileg_depthcc${N}=0$0",
 		"description": "fileg_depth_onccN alias. Type: integer | Range: -12000 to 12000 cents"
 	},
 	"ARIA fileg_dynamic": {
@@ -2689,26 +2579,26 @@
 	"ARIA fileg_hold_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_hold_onccN",
-		"body": "fileg_hold_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "fileg_hold_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"ARIA fileg_holdccN": {
 		"scope": "sfz",
 		"prefix": "fileg_holdccN",
-		"body": "fileg_holdcc${1:N}=0$0",
+		"body": "fileg_holdcc${N}=0$0",
 		"description": "fileg_hold_onccN alias. Type: float | Range: -100 to 100"
 	},
 	"ARIA fileg_release_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_release_onccN",
-		"body": "fileg_release_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "fileg_release_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA fileg_release_shape": {
 		"scope": "sfz",
 		"prefix": "fileg_release_shape",
 		"body": "fileg_release_shape=0$0",
-		"description": "Specifies the curvature of release stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of release stage of the envelope. Type: float"
 	},
 	"ARIA fileg_release_zero": {
 		"scope": "sfz",
@@ -2719,31 +2609,31 @@
 	"ARIA fileg_releaseccN": {
 		"scope": "sfz",
 		"prefix": "fileg_releaseccN",
-		"body": "fileg_releasecc${1:N}=0$0",
+		"body": "fileg_releasecc${N}=0$0",
 		"description": "fileg_release_onccN alias. Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA fileg_start_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_start_onccN",
-		"body": "fileg_start_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "fileg_start_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA fileg_startccN": {
 		"scope": "sfz",
 		"prefix": "fileg_startccN",
-		"body": "fileg_startcc${1:N}=0$0",
+		"body": "fileg_startcc${N}=0$0",
 		"description": "fileg_start_onccN alias. Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA fileg_sustain_onccN": {
 		"scope": "sfz",
 		"prefix": "fileg_sustain_onccN",
-		"body": "fileg_sustain_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "fileg_sustain_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA fileg_sustainccN": {
 		"scope": "sfz",
 		"prefix": "fileg_sustainccN",
-		"body": "fileg_sustaincc${1:N}=0$0",
+		"body": "fileg_sustaincc${N}=0$0",
 		"description": "fileg_sustain_onccN alias. Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA global_amplitude": {
@@ -2756,7 +2646,7 @@
 		"scope": "sfz",
 		"prefix": "global_label",
 		"body": "global_label=null$0",
-		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string | Range: N/A"
+		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string"
 	},
 	"ARIA global_tune": {
 		"scope": "sfz",
@@ -2780,7 +2670,7 @@
 		"scope": "sfz",
 		"prefix": "group_label",
 		"body": "group_label=null$0",
-		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string | Range: N/A"
+		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string"
 	},
 	"ARIA group_tune": {
 		"scope": "sfz",
@@ -2797,98 +2687,96 @@
 	"ARIA hihdccN": {
 		"scope": "sfz",
 		"prefix": "hihdccN",
-		"body": "hihdcc${1:N}=1$0",
+		"body": "hihdcc${N}=1$0",
 		"description": "Like hiccN but with floating point MIDI CCs Type: float | Range: 0 to 1"
 	},
 	"ARIA hint_*": {
 		"scope": "sfz",
 		"prefix": "hint_*",
 		"body": "hint_*=$0",
-		"description": "Its a 'hint' to the ARIA engine, others implementations don't have to follow. Type:  | Range: N/A"
+		"description": "Its a 'hint' to the ARIA engine, others implementations don't have to follow."
 	},
 	"ARIA #include": {
 		"scope": "sfz",
 		"prefix": "#include",
-		"body": "#include=$0",
-		"description": "A special directive, which allows using SFZ files as building blocks for creating larger, more complex SFZ files. Type: string | Range: N/A"
+		"body": "#include \"${file_path}.${1|sfz,sfzh|}\"",
+		"description": "A special directive, which allows using SFZ files as building blocks for creating larger, more complex SFZ files. Type: string"
 	},
 	"ARIA label_ccN": {
 		"scope": "sfz",
 		"prefix": "label_ccN",
-		"body": "label_cc${1:N}=$0",
-		"description": "Creates a label for the MIDI CC. Type: string | Range: N/A"
+		"body": "label_cc${N}=${my label}",
+		"description": "Creates a label for the MIDI CC. Type: string"
 	},
 	"ARIA lfoN_freq_lfoX_onccY": {
 		"scope": "sfz",
 		"prefix": "lfoN_freq_lfoX_onccY",
-		"body": "lfoN_freq_lfoX_onccY=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_freq_lfo${X}_oncc${Y}=$0"
 	},
 	"ARIA lfoN_offset": {
 		"scope": "sfz",
 		"prefix": "lfoN_offset",
-		"body": "lfoN_offset=$0",
-		"description": "DC offset - Add to LFO output; not affected by scale. Type: float | Range: N/A"
+		"body": "lfo${N}_offset=$0",
+		"description": "DC offset - Add to LFO output; not affected by scale. Type: float"
 	},
 	"ARIA lfoN_offsetX": {
 		"scope": "sfz",
 		"prefix": "lfoN_offsetX",
-		"body": "lfoN_offsetX=$0",
-		"description": "lfoN_offset alias. Type: float | Range: N/A"
+		"body": "lfo${N}_offset${X}=$0",
+		"description": "lfoN_offset alias. Type: float"
 	},
 	"ARIA lfoN_ratio": {
 		"scope": "sfz",
 		"prefix": "lfoN_ratio",
-		"body": "lfoN_ratio=$0",
-		"description": "Sets the ratio between the specified sub waveform and the main waveform. Type: float | Range: N/A"
+		"body": "lfo${N}_ratio=$0",
+		"description": "Sets the ratio between the specified sub waveform and the main waveform. Type: float"
 	},
 	"ARIA lfoN_ratioX": {
 		"scope": "sfz",
 		"prefix": "lfoN_ratioX",
-		"body": "lfoN_ratioX=$0",
-		"description": "lfoN_ratio alias. Type: float | Range: N/A"
+		"body": "lfo${N}_ratio${X}=$0",
+		"description": "lfoN_ratio alias. Type: float"
 	},
 	"ARIA lfoN_scale": {
 		"scope": "sfz",
 		"prefix": "lfoN_scale",
-		"body": "lfoN_scale=$0",
-		"description": "Sets the scaling between the specified sub waveform and the main waveform. Type: float | Range: N/A"
+		"body": "lfo${N}_scale=$0",
+		"description": "Sets the scaling between the specified sub waveform and the main waveform. Type: float"
 	},
 	"ARIA lfoN_scaleX": {
 		"scope": "sfz",
 		"prefix": "lfoN_scaleX",
-		"body": "lfoN_scaleX=$0",
-		"description": "lfoN_scale alias. Type: float | Range: N/A"
+		"body": "lfo${N}_scale${X}=$0",
+		"description": "lfoN_scale alias. Type: float"
 	},
 	"ARIA lfoN_wave_onccX": {
 		"scope": "sfz",
 		"prefix": "lfoN_wave_onccX",
-		"body": "lfoN_wave_onccX=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "lfo${N}_wave_oncc${X}=$0"
 	},
 	"ARIA lfoN_waveX": {
 		"scope": "sfz",
 		"prefix": "lfoN_waveX",
-		"body": "lfoN_waveX=1$0",
-		"description": "lfoN_wave alias. Type: integer | Range: N/A"
+		"body": "lfo${N}_wave${X}=1$0",
+		"description": "lfoN_wave alias. Type: integer"
 	},
 	"ARIA lohdccN": {
 		"scope": "sfz",
 		"prefix": "lohdccN",
-		"body": "lohdcc${1:N}=0$0",
+		"body": "lohdcc${N}=0$0",
 		"description": "Like loccN but with floating point MIDI CCs Type: float | Range: 0 to 1"
 	},
 	"ARIA loopcount": {
 		"scope": "sfz",
 		"prefix": "loopcount",
 		"body": "loopcount=$0",
-		"description": "loop_count alias. Type: integer | Range: N/A"
+		"description": "loop_count alias. Type: integer"
 	},
 	"ARIA looptune": {
 		"scope": "sfz",
 		"prefix": "looptune",
 		"body": "looptune=0$0",
-		"description": "loop_tune alias. Type: float | Range: N/A"
+		"description": "loop_tune alias. Type: float"
 	},
 	"ARIA looptype": {
 		"scope": "sfz",
@@ -2906,7 +2794,7 @@
 		"scope": "sfz",
 		"prefix": "master_label",
 		"body": "master_label=null$0",
-		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string | Range: N/A"
+		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string"
 	},
 	"ARIA master_tune": {
 		"scope": "sfz",
@@ -2930,31 +2818,31 @@
 		"scope": "sfz",
 		"prefix": "off_shape",
 		"body": "off_shape=-10.3616$0",
-		"description": "The coefficient used by off_curve. Type: float | Range: N/A"
+		"description": "The coefficient used by off_curve. Type: float"
 	},
 	"ARIA off_time": {
 		"scope": "sfz",
 		"prefix": "off_time",
 		"body": "off_time=0.006$0",
-		"description": "When off_mode is set to time, this specifies the fadeout time for regions being muted by voice-stealing. Type: float | Range: N/A"
+		"description": "When off_mode is set to time, this specifies the fadeout time for regions being muted by voice-stealing. Type: float"
 	},
 	"ARIA on_hihdccN": {
 		"scope": "sfz",
 		"prefix": "on_hihdccN",
-		"body": "on_hihdcc${1:N}=-1$0",
+		"body": "on_hihdcc${N}=-1$0",
 		"description": "Like on_hiccN but with floating point MIDI CCs. Type: float | Range: 0 to 1"
 	},
 	"ARIA on_lohdccN": {
 		"scope": "sfz",
 		"prefix": "on_lohdccN",
-		"body": "on_lohdcc${1:N}=-1$0",
+		"body": "on_lohdcc${N}=-1$0",
 		"description": "Like on_loccN but with floating point MIDI CCs. Type: float | Range: 0 to 1"
 	},
 	"ARIA pan_ccN": {
 		"scope": "sfz",
 		"prefix": "pan_ccN",
-		"body": "pan_cc${1:N}=$0",
-		"description": "pan_onccN alias. Type:  | Range: N/A"
+		"body": "pan_cc${N}=$0",
+		"description": "pan_onccN alias."
 	},
 	"ARIA pan_law": {
 		"scope": "sfz",
@@ -2972,7 +2860,7 @@
 		"scope": "sfz",
 		"prefix": "param_offset",
 		"body": "param_offset=$0",
-		"description": "Adds a number to the parameter numbers of built-in or vendor-specific effects. Type: integer | Range: N/A"
+		"description": "Adds a number to the parameter numbers of built-in or vendor-specific effects. Type: integer"
 	},
 	"ARIA pitch": {
 		"scope": "sfz",
@@ -2983,26 +2871,25 @@
 	"ARIA pitcheg_attack_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_attack_onccN",
-		"body": "pitcheg_attack_oncc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "pitcheg_attack_oncc${N}=$0"
 	},
 	"ARIA pitcheg_attack_shape": {
 		"scope": "sfz",
 		"prefix": "pitcheg_attack_shape",
 		"body": "pitcheg_attack_shape=0$0",
-		"description": "Specifies the curvature of attack stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of attack stage of the envelope. Type: float"
 	},
 	"ARIA pitcheg_decay_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_decay_onccN",
-		"body": "pitcheg_decay_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "pitcheg_decay_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"ARIA pitcheg_decay_shape": {
 		"scope": "sfz",
 		"prefix": "pitcheg_decay_shape",
 		"body": "pitcheg_decay_shape=0$0",
-		"description": "Specifies the curvature of decay stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of decay stage of the envelope. Type: float"
 	},
 	"ARIA pitcheg_decay_zero": {
 		"scope": "sfz",
@@ -3013,19 +2900,19 @@
 	"ARIA pitcheg_delay_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_delay_onccN",
-		"body": "pitcheg_delay_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "pitcheg_delay_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"ARIA pitcheg_depth_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_depth_onccN",
-		"body": "pitcheg_depth_oncc${1:N}=0$0",
-		"description": " Type: integer | Range: -12000 to 12000 cents"
+		"body": "pitcheg_depth_oncc${N}=0$0",
+		"description": "Type: integer | Range: -12000 to 12000 cents"
 	},
 	"ARIA pitcheg_depthccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_depthccN",
-		"body": "pitcheg_depthcc${1:N}=0$0",
+		"body": "pitcheg_depthcc${N}=0$0",
 		"description": "pitcheg_depth_onccN alias. Type: integer | Range: -12000 to 12000 cents"
 	},
 	"ARIA pitcheg_dynamic": {
@@ -3037,20 +2924,20 @@
 	"ARIA pitcheg_hold_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_hold_onccN",
-		"body": "pitcheg_hold_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100"
+		"body": "pitcheg_hold_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100"
 	},
 	"ARIA pitcheg_release_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_release_onccN",
-		"body": "pitcheg_release_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "pitcheg_release_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA pitcheg_release_shape": {
 		"scope": "sfz",
 		"prefix": "pitcheg_release_shape",
 		"body": "pitcheg_release_shape=0$0",
-		"description": "Specifies the curvature of release stage of the envelope. Type: float | Range: N/A"
+		"description": "Specifies the curvature of release stage of the envelope. Type: float"
 	},
 	"ARIA pitcheg_release_zero": {
 		"scope": "sfz",
@@ -3061,14 +2948,14 @@
 	"ARIA pitcheg_start_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_start_onccN",
-		"body": "pitcheg_start_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "pitcheg_start_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA pitcheg_sustain_onccN": {
 		"scope": "sfz",
 		"prefix": "pitcheg_sustain_onccN",
-		"body": "pitcheg_sustain_oncc${1:N}=0$0",
-		"description": " Type: float | Range: -100 to 100 seconds"
+		"body": "pitcheg_sustain_oncc${N}=0$0",
+		"description": "Type: float | Range: -100 to 100 seconds"
 	},
 	"ARIA polyphony_group": {
 		"scope": "sfz",
@@ -3080,61 +2967,54 @@
 		"scope": "sfz",
 		"prefix": "polyphony_stealing",
 		"body": "polyphony_stealing=$0",
-		"description": " Type: integer | Range: N/A"
+		"description": "Type: integer"
 	},
 	"ARIA position_curveccN": {
 		"scope": "sfz",
 		"prefix": "position_curveccN",
-		"body": "position_curvecc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "position_curvecc${N}=$0"
 	},
 	"ARIA position_keycenter": {
 		"scope": "sfz",
 		"prefix": "position_keycenter",
-		"body": "position_keycenter=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "position_keycenter=$0"
 	},
 	"ARIA position_keytrack": {
 		"scope": "sfz",
 		"prefix": "position_keytrack",
-		"body": "position_keytrack=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "position_keytrack=$0"
 	},
 	"ARIA position_onccN": {
 		"scope": "sfz",
 		"prefix": "position_onccN",
-		"body": "position_oncc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "position_oncc${N}=$0"
 	},
 	"ARIA position_random": {
 		"scope": "sfz",
 		"prefix": "position_random",
 		"body": "position_random=0$0",
-		"description": " Type: float | Range: -100 to 100 %"
+		"description": "Type: float | Range: -100 to 100 %"
 	},
 	"ARIA position_smoothccN": {
 		"scope": "sfz",
 		"prefix": "position_smoothccN",
-		"body": "position_smoothcc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "position_smoothcc${N}=$0"
 	},
 	"ARIA position_stepccN": {
 		"scope": "sfz",
 		"prefix": "position_stepccN",
-		"body": "position_stepcc${1:N}=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "position_stepcc${N}=$0"
 	},
 	"ARIA position_veltrack": {
 		"scope": "sfz",
 		"prefix": "position_veltrack",
-		"body": "position_veltrack=$0",
-		"description": " Type:  | Range: N/A"
+		"body": "position_veltrack=$0"
 	},
 	"ARIA region_label": {
 		"scope": "sfz",
 		"prefix": "region_label",
 		"body": "region_label=null$0",
-		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string | Range: N/A"
+		"description": "An ARIA extension which sets what is displayed in the default info tab of Sforzando. Type: string"
 	},
 	"ARIA resonance_random": {
 		"scope": "sfz",
@@ -3145,13 +3025,13 @@
 	"ARIA set_hdccN": {
 		"scope": "sfz",
 		"prefix": "set_hdccN",
-		"body": "set_hdcc${1:N}=$0",
+		"body": "set_hdcc${N}=$0",
 		"description": "Like set_ccN but with floating point MIDI CCs. Type: float | Range: 0 to 1"
 	},
 	"ARIA set_realccN": {
 		"scope": "sfz",
 		"prefix": "set_realccN",
-		"body": "set_realcc${1:N}=$0",
+		"body": "set_realcc${N}=$0",
 		"description": "set_hdccN alias. Type: float | Range: 0 to 1"
 	},
 	"ARIA sostenuto_cc": {
@@ -3169,25 +3049,25 @@
 	"ARIA start_hihdccN": {
 		"scope": "sfz",
 		"prefix": "start_hihdccN",
-		"body": "start_hihdcc${1:N}=-1$0",
+		"body": "start_hihdcc${N}=-1$0",
 		"description": "on_hihdccN alias. Type: float | Range: 0 to 1"
 	},
 	"ARIA start_lohdccN": {
 		"scope": "sfz",
 		"prefix": "start_lohdccN",
-		"body": "start_lohdcc${1:N}=-1$0",
+		"body": "start_lohdcc${N}=-1$0",
 		"description": "on_lohdccN alias. Type: float | Range: 0 to 1"
 	},
 	"ARIA stop_hihdccN": {
 		"scope": "sfz",
 		"prefix": "stop_hihdccN",
-		"body": "stop_hihdcc${1:N}=-1$0",
+		"body": "stop_hihdcc${N}=-1$0",
 		"description": "Like stop_hiccN but with floating point MIDI CCs. Type: float | Range: 0 to 1"
 	},
 	"ARIA stop_lohdccN": {
 		"scope": "sfz",
 		"prefix": "stop_lohdccN",
-		"body": "stop_lohdcc${1:N}=-1$0",
+		"body": "stop_lohdcc${N}=-1$0",
 		"description": "Like stop_loccN but with floating point MIDI CCs. Type: float | Range: 0 to 1"
 	},
 	"ARIA sustain_cc": {
@@ -3212,7 +3092,7 @@
 		"scope": "sfz",
 		"prefix": "sw_label",
 		"body": "sw_label=$0",
-		"description": "Label for activated keyswitch on GUI. Type: string | Range: N/A"
+		"description": "Label for activated keyswitch on GUI. Type: string"
 	},
 	"ARIA sw_lolast": {
 		"scope": "sfz",
@@ -3224,24 +3104,24 @@
 		"scope": "sfz",
 		"prefix": "sw_note_offset",
 		"body": "sw_note_offset=$0",
-		"description": "Follows the same logic as SFZ 2.0’s note_offset but for key switches. Type: integer | Range: N/A"
+		"description": "Follows the same logic as SFZ 2.0’s note_offset but for key switches. Type: integer"
 	},
 	"ARIA sw_octave_offset": {
 		"scope": "sfz",
 		"prefix": "sw_octave_offset",
 		"body": "sw_octave_offset=$0",
-		"description": "Follows the same logic as SFZ 2.0’s octave_offset but for key switches. Type: integer | Range: N/A"
+		"description": "Follows the same logic as SFZ 2.0’s octave_offset but for key switches. Type: integer"
 	},
 	"ARIA tune_ccN": {
 		"scope": "sfz",
 		"prefix": "tune_ccN",
-		"body": "tune_cc${1:N}=$0",
+		"body": "tune_cc${N}=$0",
 		"description": "pitch_onccN alias. Type:  | Range: -9600 to 9600 cents"
 	},
 	"ARIA tune_curveccN": {
 		"scope": "sfz",
 		"prefix": "tune_curveccN",
-		"body": "tune_curvecc${1:N}=$0",
+		"body": "tune_curvecc${N}=$0",
 		"description": "pitch_curveccN alias. Type: integer | Range: 0 to 255"
 	},
 	"ARIA tune_keytrack": {
@@ -3253,7 +3133,7 @@
 	"ARIA tune_onccN": {
 		"scope": "sfz",
 		"prefix": "tune_onccN",
-		"body": "tune_oncc${1:N}=$0",
+		"body": "tune_oncc${N}=$0",
 		"description": "pitch_onccN alias. Type:  | Range: -9600 to 9600 cents"
 	},
 	"ARIA tune_random": {
@@ -3265,14 +3145,14 @@
 	"ARIA tune_smoothccN": {
 		"scope": "sfz",
 		"prefix": "tune_smoothccN",
-		"body": "tune_smoothcc${1:N}=0$0",
-		"description": "pitch_smoothccN alias. Type: float | Range: 0 to  ms"
+		"body": "tune_smoothcc${N}=0$0",
+		"description": "pitch_smoothccN alias. Type: float"
 	},
 	"ARIA tune_stepccN": {
 		"scope": "sfz",
 		"prefix": "tune_stepccN",
-		"body": "tune_stepcc${1:N}=0$0",
-		"description": "pitch_stepccN alias. Type:  | Range: 0 to"
+		"body": "tune_stepcc${N}=0$0",
+		"description": "pitch_stepccN alias."
 	},
 	"ARIA tune_veltrack": {
 		"scope": "sfz",
@@ -3283,32 +3163,32 @@
 	"ARIA varNN_*": {
 		"scope": "sfz",
 		"prefix": "varNN_*",
-		"body": "varNN_*=$0",
-		"description": "Specifies the target for variable NN to modulate. Type:  | Range: N/A"
+		"body": "var${NN}_*=$0",
+		"description": "Specifies the target for variable NN to modulate."
 	},
 	"ARIA varNN_curveccX": {
 		"scope": "sfz",
 		"prefix": "varNN_curveccX",
-		"body": "varNN_curveccX=$0",
+		"body": "var${NN}_curvecc${X}=$0",
 		"description": "Specifies the ‹curve› number which MIDI CC X uses to modulate variable NN. Type: integer | Range: 0 to 255"
 	},
 	"ARIA varNN_mod": {
 		"scope": "sfz",
 		"prefix": "varNN_mod",
-		"body": "varNN_mod=$0",
+		"body": "var${NN}_mod=${1|mult,add|}$0",
 		"description": "Specifies the method used to calculate variable number NN from MIDI CCs. Type: string | Range: mult, add"
 	},
 	"ARIA varNN_onccX": {
 		"scope": "sfz",
 		"prefix": "varNN_onccX",
-		"body": "varNN_onccX=$0",
+		"body": "var${NN}_oncc${X}=$0",
 		"description": "Specifies the method used to calculate variable number NN from MIDI CCs. Type: float | Range: 0 to 1"
 	},
 	"ARIA vendor_specific": {
 		"scope": "sfz",
 		"prefix": "vendor_specific",
 		"body": "vendor_specific=$0",
-		"description": "Defines vendor-specific effects, for example Garritan-specific stage depth effect in ARIA. Type: string | Range: N/A"
+		"description": "Defines vendor-specific effects, for example Garritan-specific stage depth effect in ARIA. Type: string"
 	},
 
 	"MIDI CC0": {
