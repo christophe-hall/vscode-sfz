@@ -1,12 +1,18 @@
 {
+	"SFZ Help": {
+		"scope": "sfz",
+		"prefix": "?sfz",
+		"body": "https://sfzformat.com",
+		"description": "Help on everything SFZ."
+	},
 	"Control Header": {
 		"scope": "sfz",
 		"prefix": "header: control",
 		"body": [
 			"<control>",
-			"default_path=${1:path}",
+			"default_path=${1:path/to/samples/}",
 			"label_cc${2:N}=${3:label}",
-			"#define \\$${variable} ${definition}",
+			"#define $${variable} ${definition}",
 			"$0"
 		],
 		"description": "SFZ v2 header which should come before global in the file. Delete unneeded opcodes."
@@ -15,7 +21,8 @@
 		"scope": "sfz",
 		"prefix": "header: global",
 		"body": [
-			"<global>$0"
+			"<global>",
+			"$0"
 		],
 		"description": "SFZ v2 header which allows entering parameters common to all regions in the SFZ file."
 	},
@@ -49,7 +56,8 @@
 		"scope": "sfz",
 		"prefix": "header: curve",
 		"body": [
-			"<curve>curveindex=${1:curve_number}",
+			"<curve>",
+			"curveindex=${1:curve_number}",
 			"v${2:three_digits}=${3:point_value}",
 			"$0"
 		],
@@ -60,7 +68,7 @@
 		"scope": "sfz",
 		"prefix": "amp_keycenter",
 		"body": "amp_keycenter=60$0",
-		"description": "Center key for amplifier keyboard tracking. In this key, the amplifier keyboard tracking will have no effect. Type: integer | Range: 0 to 127"
+		"description": "Center key for amplifier keyboard tracking. At this key, the amplifier keyboard tracking will have no effect. Type: integer | Range: 0 to 127"
 	},
 	"SFZv1 amp_keytrack": {
 		"scope": "sfz",
@@ -437,8 +445,8 @@
 	"SFZv1 fil_type": {
 		"scope": "sfz",
 		"prefix": "fil_type",
-		"body": "fil_type=lpf_2p$0",
-		"description": "Filter type. Type: string | Range: lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, bpf_1p, brf_1p, apf_1p, lpf_2p_sv, hpf_2p_sv, bpf_2p_sv, brf_2p_sv, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink, lsh, hsh, peq"
+		"body": "fil_type=${1|lpf_1p,hpf_1p,lpf_2p,hpf_2p,bpf_2p,brf_2p,bpf_1p,brf_1p,apf_1p,lpf_2p_sv,hpf_2p_sv,bpf_2p_sv,brf_2p_sv,pkf_2p,lpf_4p,hpf_4p,lpf_6p,hpf_6p,comb,pink,lsh,hsh,peq|}$0",
+		"description": "Filter type. Type: string | Default: lpf_2p | Options: lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, bpf_1p, brf_1p, apf_1p, lpf_2p_sv, hpf_2p_sv, bpf_2p_sv, brf_2p_sv, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink, lsh, hsh, peq"
 	},
 	"SFZv1 fil_veltrack": {
 		"scope": "sfz",
@@ -599,8 +607,8 @@
 	"SFZv1 filtype": {
 		"scope": "sfz",
 		"prefix": "filtype",
-		"body": "filtype=lpf_2p$0",
-		"description": "fil_type alias. Type: string | Range: lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, bpf_1p, brf_1p, apf_1p, lpf_2p_sv, hpf_2p_sv, bpf_2p_sv, brf_2p_sv, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink, lsh, hsh, peq"
+		"body": "filtype=${1|lpf_1p,hpf_1p,lpf_2p,hpf_2p,bpf_2p,brf_2p,bpf_1p,brf_1p,apf_1p,lpf_2p_sv,hpf_2p_sv,bpf_2p_sv,brf_2p_sv,pkf_2p,lpf_4p,hpf_4p,lpf_6p,hpf_6p,comb,pink,lsh,hsh,peq|}$0",
+		"description": "fil_type alias. Type: string | Default: lpf_2p | Options: lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, bpf_1p, brf_1p, apf_1p, lpf_2p_sv, hpf_2p_sv, bpf_2p_sv, brf_2p_sv, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink, lsh, hsh, peq"
 	},
 	"SFZv1 gain_ccN": {
 		"scope": "sfz",
@@ -737,8 +745,8 @@
 	"SFZv1 loopmode": {
 		"scope": "sfz",
 		"prefix": "loopmode",
-		"body": "loopmode=no_loop for samples without a loop defined, loop_continuous for samples with defined loop(s).$0",
-		"description": "loop_mode alias. Type: string | Range: no_loop, one_shot, loop_continuous, loop_sustain"
+		"body": "loopmode=${1|no_loop,one_shot,loop_continuous,loop_sustain|}$0",
+		"description": "loop_mode alias. Type: string | Default: no_loop for samples without a loop defined, loop_continuous for samples with defined loop(s) | Options: no_loop, one_shot, loop_continuous, loop_sustain"
 	},
 	"SFZv1 loopstart": {
 		"scope": "sfz",
@@ -773,8 +781,8 @@
 	"SFZv1 off_mode": {
 		"scope": "sfz",
 		"prefix": "off_mode",
-		"body": "off_mode=fast$0",
-		"description": "Region off mode. Type: string | Range: fast, normal, time"
+		"body": "off_mode=${1|fast,normal,time|}$0",
+		"description": "Region off mode. Type: string | Default: fast | Options: fast, normal, time"
 	},
 	"SFZv1 offby": {
 		"scope": "sfz",
@@ -1073,8 +1081,8 @@
 	"SFZv1 sw_vel": {
 		"scope": "sfz",
 		"prefix": "sw_vel",
-		"body": "sw_vel=current$0",
-		"description": "Allows overriding the velocity for the region with the velocity of the previous note. Type: string | Range: current, previous"
+		"body": "sw_vel=${1|current,previous|}$0",
+		"description": "Allows overriding the velocity for the region with the velocity of the previous note. Type: string | Default: current | Options: current, previous"
 	},
 	"SFZv1 sync_beats": {
 		"scope": "sfz",
@@ -1097,8 +1105,8 @@
 	"SFZv1 trigger": {
 		"scope": "sfz",
 		"prefix": "trigger",
-		"body": "trigger=attack$0",
-		"description": "Sets the trigger which will be used for the sample to play. Type: string | Range: attack, release, first, legato, release_key"
+		"body": "trigger=${1|attack,release,first,legato,release_key|}$0",
+		"description": "Sets the trigger which will be used for the sample to play. Type: string | Default: attack | Options: attack, release, first, legato, release_key"
 	},
 	"SFZv1 tune": {
 		"scope": "sfz",
@@ -1121,20 +1129,20 @@
 	"SFZv1 xf_cccurve": {
 		"scope": "sfz",
 		"prefix": "xf_cccurve",
-		"body": "xf_cccurve=power$0",
-		"description": "MIDI controllers crossfade curve for the region. Type: string | Range: gain, power"
+		"body": "xf_cccurve=${1|power,gain|}$0",
+		"description": "MIDI controllers crossfade curve for the region. Type: string | Default: power | Options: power, gain"
 	},
 	"SFZv1 xf_keycurve": {
 		"scope": "sfz",
 		"prefix": "xf_keycurve",
-		"body": "xf_keycurve=power$0",
-		"description": "Keyboard crossfade curve for the region. Type: string | Range: gain, power"
+		"body": "xf_keycurve=${1|power,gain|}$0",
+		"description": "Keyboard crossfade curve for the region. Type: string | Default: power | Options: power, gain"
 	},
 	"SFZv1 xf_velcurve": {
 		"scope": "sfz",
 		"prefix": "xf_velcurve",
-		"body": "xf_velcurve=power$0",
-		"description": "Velocity crossfade curve for the region. Type: string | Range: gain, power"
+		"body": "xf_velcurve=${1|power,gain|}$0",
+		"description": "Velocity crossfade curve for the region. Type: string | Default: power | Options: power, gain"
 	},
 	"SFZv1 xfin_hiccN": {
 		"scope": "sfz",
@@ -1272,8 +1280,8 @@
 	"SFZv2 bus": {
 		"scope": "sfz",
 		"prefix": "bus",
-		"body": "bus=main$0",
-		"description": "The target bus for the effect. Type: string | Range: main, aux1, aux2, aux3, aux4, aux5, aux6, aux7, aux8, fx1, fx2, fx3, fx4, midi"
+		"body": "bus=${1|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4,midi|}$0",
+		"description": "The target bus for the effect. Type: string | Default: main | Options: main, aux1, aux2, aux3, aux4, aux5, aux6, aux7, aux8, fx1, fx2, fx3, fx4, midi"
 	},
 	"SFZv2 cutoff_curveccN": {
 		"scope": "sfz",
@@ -1349,8 +1357,8 @@
 	"SFZv2 default_path": {
 		"scope": "sfz",
 		"prefix": "default_path",
-		"body": "default_path=$0",
-		"description": "Default file path. Type: string"
+		"body": "default_path=${path/to/samples/}",
+		"description": "Default path to folder containing sample files; unquoted, with trailing slash. Type: string"
 	},
 	"SFZv2 #define": {
 		"scope": "sfz",
@@ -1362,7 +1370,7 @@
 		"scope": "sfz",
 		"prefix": "delay_beats",
 		"body": "delay_beats=$0",
-		"description": "Delays the start of the region until a certain amount of musical beats are passed. Type: float"
+		"description": "Delays the onset of playback by a number of musical beats. Type: float"
 	},
 	"SFZv2 delay_onccN": {
 		"scope": "sfz",
@@ -1380,13 +1388,13 @@
 		"scope": "sfz",
 		"prefix": "delay_samples",
 		"body": "delay_samples=$0",
-		"description": "Allows the region playback to be postponed for the specified time, measured in samples (and therefore dependent on current sample rate). Type: integer"
+		"description": "Delays the onset of playback by a number of samples. The delay time in seconds equates to this number divided by the current sample rate. Type: integer"
 	},
 	"SFZv2 direction": {
 		"scope": "sfz",
 		"prefix": "direction",
-		"body": "direction=forward$0",
-		"description": "The direction in which the sample is to be played. Type: string | Range: forward, reverse"
+		"body": "direction=${1|forward,reverse|}$0",
+		"description": "The direction in which the sample is to be played. Type: string | Default: forward | Options: forward, reverse"
 	},
 	"SFZv2 effect3": {
 		"scope": "sfz",
@@ -1623,7 +1631,7 @@
 		"scope": "sfz",
 		"prefix": "eqN_type",
 		"body": "eq${1|1,2,3|}_type=${2|peak,lshelf,hshelf|}$0",
-		"description": "Sets the type of EQ filter. Type: string | Range: peak, lshelf, hshelf"
+		"description": "Sets the type of EQ filter. Type: string | Options: peak, lshelf, hshelf"
 	},
 	"SFZv2 fil2_keycenter": {
 		"scope": "sfz",
@@ -1640,8 +1648,8 @@
 	"SFZv2 fil2_type": {
 		"scope": "sfz",
 		"prefix": "fil2_type",
-		"body": "fil2_type=lpf_2p$0",
-		"description": "fil_type alias. Type: string | Range: lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, bpf_1p, brf_1p, apf_1p, lpf_2p_sv, hpf_2p_sv, bpf_2p_sv, brf_2p_sv, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink, lsh, hsh, peq"
+		"body": "fil2_type=${1|lpf_1p,hpf_1p,lpf_2p,hpf_2p,bpf_2p,brf_2p,bpf_1p,brf_1p,apf_1p,lpf_2p_sv,hpf_2p_sv,bpf_2p_sv,brf_2p_sv,pkf_2p,lpf_4p,hpf_4p,lpf_6p,hpf_6p,comb,pink,lsh,hsh,peq|}$0",
+		"description": "Filter type. Type: string | Default: lpf_2p | Options: lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, bpf_1p, brf_1p, apf_1p, lpf_2p_sv, hpf_2p_sv, bpf_2p_sv, brf_2p_sv, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink, lsh, hsh, peq"
 	},
 	"SFZv2 fil2_veltrack": {
 		"scope": "sfz",
@@ -2045,8 +2053,8 @@
 	"SFZv2 loop_type": {
 		"scope": "sfz",
 		"prefix": "loop_type",
-		"body": "loop_type=forward$0",
-		"description": "Defines the looping mode. Type: string | Range: forward, backward, alternate"
+		"body": "loop_type=${1|forward, backward, alternate|}$0",
+		"description": "Defines the looping mode. Type: string | Default: forward | Options: forward, backward, alternate"
 	},
 	"SFZv2 loprog": {
 		"scope": "sfz",
@@ -2081,8 +2089,8 @@
 	"SFZv2 note_selfmask": {
 		"scope": "sfz",
 		"prefix": "note_selfmask",
-		"body": "note_selfmask=on$0",
-		"description": "Controls note-stealing behavior for a single pitch, when using note_polyphony. Type: string | Range: on, off"
+		"body": "note_selfmask=${1|on,off|}$0",
+		"description": "Controls note-stealing behavior for a single pitch, when using note_polyphony. Type: string | Default: on | Options: on, off"
 	},
 	"SFZv2 octave_offset": {
 		"scope": "sfz",
@@ -2117,8 +2125,8 @@
 	"SFZv2 phase": {
 		"scope": "sfz",
 		"prefix": "phase",
-		"body": "phase=normal$0",
-		"description": "If invert is set, the region is played with inverted phase. Type: string | Range: normal, invert"
+		"body": "phase=${1|normal,invert|}$0",
+		"description": "If invert is set, the region is played with inverted phase. Type: string | Default: normal | Options: normal, invert"
 	},
 	"SFZv2 pitch_curveccN": {
 		"scope": "sfz",
@@ -2236,8 +2244,8 @@
 	"SFZv2 rt_dead": {
 		"scope": "sfz",
 		"prefix": "rt_dead",
-		"body": "rt_dead=off$0",
-		"description": "Controls whether a release sample should play if its sustain sample has ended, or not. Type: string | Range: on, off"
+		"body": "rt_dead=${1|on,off|}$0",
+		"description": "Controls whether a release sample should play if its sustain sample has ended, or not. Type: string | Default: off | Options: on, off"
 	},
 	"SFZv2 set_ccN": {
 		"scope": "sfz",
@@ -2248,8 +2256,8 @@
 	"SFZv2 sostenuto_sw": {
 		"scope": "sfz",
 		"prefix": "sostenuto_sw",
-		"body": "sostenuto_sw=$0",
-		"description": "Turns the sostenuto switch on or off. Type: string | Range: on, off"
+		"body": "sostenuto_sw=${1|on,off|}$0",
+		"description": "Turns the sostenuto switch on or off. Type: string | Default: off | Options: on, off"
 	},
 	"SFZv2 start_hiccN": {
 		"scope": "sfz",
@@ -2284,8 +2292,8 @@
 	"SFZv2 sustain_sw": {
 		"scope": "sfz",
 		"prefix": "sustain_sw",
-		"body": "sustain_sw=$0",
-		"description": "Turns the sustain switch on or off. Type: string | Range: on, off"
+		"body": "sustain_sw=${1|on,off|}$0",
+		"description": "Turns the sustain switch on or off. Type: string | Default: off | Options: on, off"
 	},
 	"SFZv2 sw_default": {
 		"scope": "sfz",
@@ -2296,8 +2304,8 @@
 	"SFZv2 type": {
 		"scope": "sfz",
 		"prefix": "type",
-		"body": "type=$0",
-		"description": "Effect type or vendor-specific effect name. Varies across SFZ players. Type: string | Range: apan, comp, delay, disto, eq, filter, fverb, gate, limiter, lofi, mverb, phaser, static, strings, tdfir, com.mda.Limiter, com.mda.Overdrive, com.mda.Leslie, com.mda.RingMod, com.mda.Delay, com.mda.Bandisto, com.mda.Ambience, com.mda.DubDelay, com.mda.Detune, com.mda.Dither, com.mda.Combo, com.mda.Degrade, com.mda.SubSynth, com.mda.RezFilter"
+		"body": "type=${1|apan,comp,delay,disto,eq,filter,fverb,gate,limiter,lofi,mverb,phaser,static,strings,tdfir,com.mda.Limiter,com.mda.Overdrive,com.mda.Leslie,com.mda.RingMod,com.mda.Delay,com.mda.Bandisto,com.mda.Ambience,com.mda.DubDelay,com.mda.Detune,com.mda.Dither,com.mda.Combo,com.mda.Degrade,com.mda.SubSynth,com.mda.RezFilter|}$0",
+		"description": "Effect type or vendor-specific effect name. Varies across SFZ players. Type: string | Options: apan, comp, delay, disto, eq, filter, fverb, gate, limiter, lofi, mverb, phaser, static, strings, tdfir, com.mda.Limiter, com.mda.Overdrive, com.mda.Leslie, com.mda.RingMod, com.mda.Delay, com.mda.Bandisto, com.mda.Ambience, com.mda.DubDelay, com.mda.Detune, com.mda.Dither, com.mda.Combo, com.mda.Degrade, com.mda.SubSynth, com.mda.RezFilter"
 	},
 	"SFZv2 vN": {
 		"scope": "sfz",
@@ -2330,8 +2338,8 @@
 	"SFZv2 waveguide": {
 		"scope": "sfz",
 		"prefix": "waveguide",
-		"body": "waveguide=$0",
-		"description": "Enables waveguide synthesis for the region. Type: string | Range: on, off"
+		"body": "waveguide=${1|on,off|}$0",
+		"description": "Enables waveguide synthesis for the region. Type: string | Default: off | Options: on, off"
 	},
 
 	"ARIA amp_veltrack_ccN": {
@@ -2640,7 +2648,7 @@
 		"scope": "sfz",
 		"prefix": "global_amplitude",
 		"body": "global_amplitude=100$0",
-		"description": "ARIA extension, like amplitude, but affecting everything when set under the ‹global› header. Type: float | Range: 0 to 100 %"
+		"description": "ARIA extension; like amplitude, but affecting everything when set under the ‹global› header. Type: float | Range: 0 to 100 %"
 	},
 	"ARIA global_label": {
 		"scope": "sfz",
@@ -2694,19 +2702,19 @@
 		"scope": "sfz",
 		"prefix": "hint_*",
 		"body": "hint_*=$0",
-		"description": "Its a 'hint' to the ARIA engine, others implementations don't have to follow."
+		"description": "A 'hint' to the ARIA engine which other implementations may not follow."
 	},
 	"ARIA #include": {
 		"scope": "sfz",
 		"prefix": "#include",
-		"body": "#include \"${file_path}.${1|sfz,sfzh|}\"",
+		"body": "#include \"${path/to/sfzlike/file}\"",
 		"description": "A special directive, which allows using SFZ files as building blocks for creating larger, more complex SFZ files. Type: string"
 	},
 	"ARIA label_ccN": {
 		"scope": "sfz",
 		"prefix": "label_ccN",
 		"body": "label_cc${N}=${my label}",
-		"description": "Creates a label for the MIDI CC. Type: string"
+		"description": "Creates a label for the MIDI CC. May only be declared in <control> block. Type: string"
 	},
 	"ARIA lfoN_freq_lfoX_onccY": {
 		"scope": "sfz",
@@ -2717,7 +2725,7 @@
 		"scope": "sfz",
 		"prefix": "lfoN_offset",
 		"body": "lfo${N}_offset=$0",
-		"description": "DC offset - Add to LFO output; not affected by scale. Type: float"
+		"description": "DC offset added to LFO output; not affected by scale. Type: float"
 	},
 	"ARIA lfoN_offsetX": {
 		"scope": "sfz",
@@ -2781,8 +2789,8 @@
 	"ARIA looptype": {
 		"scope": "sfz",
 		"prefix": "looptype",
-		"body": "looptype=forward$0",
-		"description": "loop_type alias. Type: string | Range: forward, backward, alternate"
+		"body": "looptype=${1|forward,backward,alternate|}$0",
+		"description": "loop_type alias. Type: string | Default: forward | Options: forward, backward, alternate"
 	},
 	"ARIA master_amplitude": {
 		"scope": "sfz",
@@ -2847,8 +2855,8 @@
 	"ARIA pan_law": {
 		"scope": "sfz",
 		"prefix": "pan_law",
-		"body": "pan_law=$0",
-		"description": "Sets the pan law to be used. Type: string | Range: mma, balance"
+		"body": "pan_law=${1|balance,mma|}$0",
+		"description": "Sets the pan law to be used. Type: string | Default: balance | Options: mma, balance"
 	},
 	"ARIA pan_random": {
 		"scope": "sfz",
@@ -3176,7 +3184,7 @@
 		"scope": "sfz",
 		"prefix": "varNN_mod",
 		"body": "var${NN}_mod=${1|mult,add|}$0",
-		"description": "Specifies the method used to calculate variable number NN from MIDI CCs. Type: string | Range: mult, add"
+		"description": "Specifies the method used to calculate variable number NN from MIDI CCs. Type: string | Options: mult, add"
 	},
 	"ARIA varNN_onccX": {
 		"scope": "sfz",
@@ -3737,7 +3745,6 @@
 		"body": "cc90=$0",
 		"description": "Typically free MIDI CC."
 	},
-
 	"MIDI CC91": {
 		"scope": "sfz",
 		"prefix": "cc091: Effects 1 Depth (Reverb)",
@@ -4103,7 +4110,7 @@
 		"scope": "sfz",
 		"prefix": "cc153: Total Gates Open",
 		"body": "cc153=$0",
-		"description": "ARIA CC for yielding the cuurent number of keys held down."
+		"description": "ARIA CC for yielding the current number of keys held down."
 	},
 	"ARIA CC154": {
 		"scope": "sfz",
