@@ -48,6 +48,10 @@
                 "path": "./snippets/sfz.json"
             },
             {
+                "language": "sfz",
+                "path": "./snippets/mda_effects.json"
+            },
+            {
                 "language": "json",
                 "path": "./snippets/json.json"
             }

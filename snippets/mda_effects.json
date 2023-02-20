@@ -1,0 +1,302 @@
+{
+	"MDA Ambience Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Ambience Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Ambience Effect Controls",
+			"set_cc${1}0=89 label_cc${1}0=Ambience Size     // Room size (variable from 'cardboard box' through 'vocal booth' to 'medium studio')",
+			"set_cc${1}1=89 label_cc${1}1=Ambience HF Damp  // Gentle low-pass filter to emulate the high frequency absorption of softer wall surfaces",
+			"set_cc${1}2=114 label_cc${1}2=Ambience Mix     // Wet/dry mix (affects perceived distance)",
+			"set_cc${1}3=64 label_cc${1}3=Ambience Output   // Level trim",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Ambience",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Ambience effect setup including <control> and <effect> blocks."
+	},
+	"MDA Bandisto Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Bandisto Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Bandisto Effect Controls",
+			"set_cc${1}0=127 label_cc${1}0=Bandisto Listen    // Audition the low, mid and high bands individually",
+			"set_cc${1}1=51 label_cc${1}1=Bandisto L/M        // Low/mid crossover frequency",
+			"set_cc${1}2=64 label_cc${1}2=Bandisto M/H        // Mid/high crossover frequency",
+			"set_cc${1}3=64 label_cc${1}3=Bandisto Low Dist   // Low band distortion amount",
+			"set_cc${1}4=64 label_cc${1}4=Bandisto Mid Dist   // Mid band distortion amount",
+			"set_cc${1}5=64 label_cc${1}5=Bandisto High Dist  // High band distortion amount",
+			"set_cc${1}6=64 label_cc${1}6=Bandisto Low Out    // Low band output level trim",
+			"set_cc${1}7=64 label_cc${1}7=Bandisto Mid Out    // Mid band output level trim",
+			"set_cc${1}8=64 label_cc${1}8=Bandisto High Out   // High band output level trim",
+			"set_cc${1}9=51 label_cc${1}9=Bandisto Mode       // Transistor/valve; set clipping to Bipolar (top and bottom of waveform) or Unipolar (just tops)",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Bandisto",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Bandisto effect setup including <control> and <effect> blocks."
+	},
+	"MDA Combo Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Combo Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Combo Effect Controls",
+			"set_cc${1}0=127 label_cc${1}0=Combo Model    // DI (flat frequency response); Tradtional speaker simulator; Small radio speaker; Small combo (close mic); Small combo (far mic); Large stack (mic in front); Large stack (mic from side, scooped out mid EQ)",
+			"set_cc${1}1=64 label_cc${1}1=Combo Drive     // Amount of clipping (turn to left for soft, right for hard)",
+			"set_cc${1}2=64 label_cc${1}2=Combo Bias      // Clip one side of the waveform more than the other for rougher or 'gated' effects (use an oscilloscope plug-in to see what's happening)",
+			"set_cc${1}3=64 label_cc${1}3=Combo Output    // Level trim",
+			"set_cc${1}4=51 label_cc${1}4=Combo Process   // Defaults to Mono to reduce processor usage, even in a stereo channel",
+			"set_cc${1}5=0 label_cc${1}5=Combo HPF Freq   // Wet/dry mix",
+			"set_cc${1}6=64 label_cc${1}6=Combo HPF Reso  // Level trim",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Combo",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Combo effect setup including <control> and <effect> blocks."
+	},
+	"MDA Degrade Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Degrade Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Degrade Effect Controls",
+			"set_cc${1}0=102 label_cc${1}0=Degrade Headroom      // Peak clipping threshold",
+			"set_cc${1}1=64 label_cc${1}1=Degrade Quant          // Bit depth (typically 8 or below for 'telephone' quality)",
+			"set_cc${1}2=83 label_cc${1}2=Degrade Rate           // Sample Rate (turn control to left or right for different sound characters)",
+			"set_cc${1}3=114 label_cc${1}3=Degrade Post Filter   // Low-pass filter to muffle the distortion produced by the previous two controls",
+			"set_cc${1}4=74 label_cc${1}4=Degrade Non-Linearity  // Additional harmonic distortion 'thickening' (turn control to left or right for different sound characters)",
+			"set_cc${1}5=64 label_cc${1}5=Degrade Output         // Level trim",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Degrade",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Degrade effect setup including <control> and <effect> blocks."
+	},
+	"MDA Delay Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Delay Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Delay Effect Controls",
+			"set_cc${1}0=64 label_cc${1}0=Delay Freq      // Left channel delay time",
+			"set_cc${1}1=34 label_cc${1}1=Delay Fine      // Right channel delay as a percentage of left channel delay - variable to left, fixed ratios to right",
+			"set_cc${1}2=89 label_cc${1}2=Delay Feedback  // Feedback (sum of left and right outputs)",
+			"set_cc${1}3=64 label_cc${1}3=Delay FB Tone   // Feedback filtering - low-pass to left, high-pass to right",
+			"set_cc${1}4=42 label_cc${1}4=Delay Wet Mix   // Wet mix",
+			"set_cc${1}5=64 label_cc${1}5=Delay Output    // Level trim",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Delay",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Delay effect setup including <control> and <effect> blocks."
+	},
+	"MDA Detune Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Detune Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Detune Effect Controls",
+			"set_cc${1}0=25 label_cc${1}0=Detune          // Detune amount in cents (left channel is lowered in pitch, right channel is raised)",
+			"set_cc${1}1=114 label_cc${1}1=Detune Mix     // Wet/dry mix",
+			"set_cc${1}2=64 label_cc${1}2=Detune Output   // Level trim",
+			"set_cc${1}3=64 label_cc${1}3=Detune Latency  // Trade-off between latency and low-frequency response",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Detune",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Detune effect setup including <control> and <effect> blocks."
+	},
+	"MDA Dither Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Dither Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Dither Effect Controls",
+			"set_cc${1}0=64 label_cc${1}0=Dither Bits     // Output word length 8-24 bits",
+			"set_cc${1}1=112 label_cc${1}1=Dither Type    // OFF (Truncation), TRI (Triangular PDF dither), HP-TRI (High-pass Triangular PDF dither (a good general purpose dither)), N-SHAPE (Second-order noise-shaped dither (for final mastering to 8 or 16 bits))",
+			"set_cc${1}2=64 label_cc${1}2=Dither Amp      // Dither amplitude; is at optimum level but can be turned down to reduce background hiss at the expense of dither level 'pumping' caused by the input signal type and level",
+			"set_cc${1}3=64 label_cc${1}3=Dither DC Trim  // Fine tune DC offset; can help get best dither sound for silent or very quiet inputs",
+			"set_cc${1}4=0 label_cc${1}4=Dither Zoom      // Allows the signal to be faded into the noise floor at a clearly audible level so dither settings can be 'auditioned'. Note that some (perceptual) properties of dither will change when listened to in this way",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Dither",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Dither effect setup including <control> and <effect> blocks."
+	},
+	"MDA DubDelay Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA DubDelay Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA DubDelay Effect Controls",
+			"set_cc${1}0=38 label_cc${1}0=DubDelay Delay      // Delay time (delay is mono for authenticity!)",
+			"set_cc${1}1=89 label_cc${1}1=DubDelay Feedback   // Feedback - with soft saturation at maximum left position, hard clipping at maximum right",
+			"set_cc${1}2=51 label_cc${1}2=DubDelay FB Tone    // Feedback filtering - low-pass to left, high-pass to right",
+			"set_cc${1}3=0 label_cc${1}3=DubDelay LFO Depth   // Delay time modulation (sine wave)",
+			"set_cc${1}4=64 label_cc${1}4=DubDelay LFO Rate   // Modulation rate",
+			"set_cc${1}5=42 label_cc${1}5=DubDelay FX Miz     // Wet/dry mix",
+			"set_cc${1}6=64 label_cc${1}6=DubDelay Output     // Level trim",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.DubDelay",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA DubDelay effect setup including <control> and <effect> blocks."
+	},
+	"MDA Leslie Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Leslie Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Leslie Effect Controls",
+			"// Preset: Leslie Simulator",
+			"set_cc${1}0=84 label_cc${1}0=Les Speed        // Rotor speed: Stop/Slow/Fast",
+			"set_cc${1}1=64 label_cc${1}1=Les Output       // Level trim",
+			"set_cc${1}2=61 label_cc${1}2=Les X-Over Freq  // Crossover frequency between high and low rotors",
+			"set_cc${1}3=89 label_cc${1}3=Les Hi Width     // High rotor pan modulation",
+			"set_cc${1}4=76 label_cc${1}4=Les Hi Depth     // High rotor frequency modulation (doppler)",
+			"set_cc${1}5=89 label_cc${1}5=Les Hi Throb     // High rotor amplitude modulation",
+			"set_cc${1}6=64 label_cc${1}6=Les Lo Width     // Low rotor pan modulation",
+			"set_cc${1}7=64 label_cc${1}7=Les Fine Speed   // Fine control for rotor speed",
+			"set_cc${1}8=76 label_cc${1}8=Les Lo Throb     // Low rotor amplitude modulation",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Leslie",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Leslie effect setup including <control> and <effect> blocks."
+	},
+	"MDA Limiter Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Limiter Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Limiter Effect Controls",
+			"// Simple \"opto-electronic\" limiter..",
+			"set_cc${1}0=76 label_cc${1}0=Limiter Thresh   // Threshold",
+			"set_cc${1}1=76 label_cc${1}1=Limiter Trim     // Level trim",
+			"set_cc${1}2=19 label_cc${1}2=Limiter Attack   // Attack time",
+			"set_cc${1}3=64 label_cc${1}3=Limiter Release  // Release time",
+			"set_cc${1}4=64 label_cc${1}4=Limiter Knee     // Hard or soft knee",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Limiter",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Limiter effect setup including <control> and <effect> blocks."
+	},
+	"MDA Overdrive Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA Overdrive Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA Overdrive Effect Controls",
+			"set_cc${1}0=0 label_cc${1}0=Overdrive Drive    // Amount of distortion",
+			"set_cc${1}1=0 label_cc${1}1=Overdrive Muffle   // Gentle low-pass filter",
+			"set_cc${1}2=64 label_cc${1}2=Overdrive Output  // Level trim",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.Overdrive",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA Overdrive effect setup including <control> and <effect> blocks."
+	},
+	"MDA RezFilter Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA RezFilter Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA RezFilter Effect Controls",
+			"set_cc${1}0=42 label_cc${1}0=RezFilter Freq      // Cut-off frequency",
+			"set_cc${1}1=89 label_cc${1}1=RezFilter Rez       // Resonance",
+			"set_cc${1}2=64 label_cc${1}2=RezFilter Output    // Level trim",
+			"set_cc${1}3=108 label_cc${1}3=RezFilter Env>VCF  // Positive or negative (squelchy!) Envelope modulation of cut-off frequency",
+			"set_cc${1}4=0 label_cc${1}4=RezFilter Attack     // (use fast attack and release for 'dirty' modulation)",
+			"set_cc${1}5=64 label_cc${1}5=RezFilter Release   // (use fast attack and release for 'dirty' modulation)",
+			"set_cc${1}6=89 label_cc${1}6=RezFilter LFO>VCF   // LFO modulation of cut-off frequency (turn to left for sample & hold LFO, right for sine)",
+			"set_cc${1}7=51 label_cc${1}7=RezFilter LFO Rate  // LFO modulation speed",
+			"set_cc${1}8=0 label_cc${1}8=RezFilter Trigger    // Envelope trigger level (normally set to minimum to acts as a free-running envelope follower)",
+			"set_cc${1}9=95 label_cc${1}9=RezFilter Max Freq  // Limit maximum cut-off frequency for a mellower sound (the filter can sound 'screechy' at high frequencies)",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.RezFilter",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA RezFilter effect setup including <control> and <effect> blocks."
+	},
+	"MDA RingMod Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA RingMod Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA RingMod Effect Controls",
+			"set_cc${1}0=8 label_cc${1}0=RingMod Freq      // Set oscillator frequency in 100Hz steps; 8=1kHz",
+			"set_cc${1}1=0 label_cc${1}1=RingMod Fine      // Oscillator frequency fine tune",
+			"set_cc${1}2=0 label_cc${1}2=RingMod Feedback  // Amount of feedback for 'harsh' sound",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.RingMod",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA RingMod effect setup including <control> and <effect> blocks."
+	},
+	"MDA SubSynth Effect Setup": {
+		"scope": "sfz",
+		"prefix": "MDA SubSynth Setup",
+		"body": [
+			"${3:<control>}",
+			"// MDA SubSynth Effect Controls",
+			"set_cc${1}0=0 label_cc${1}0=SubSynth Type       // Distort: Takes the existing low frequencies, clips them to produce harmonics at a constant level, then filters out the higher harmonics. Has a similar effect to compressing the low frequencies.",
+			"                                                // Divide: As above, but works at an octave below the input frequency, like an octave divider guitar pedal.",
+			"                                                // Invert: Flips the phase of the low frequency signal once per cycle to add a smooth sub-octave. A simplified version of the classic Sub-Harmonic Synthesizer.",
+			"                                                // Key Osc: Adds a decaying 'boom'; usually made with an oscillator before a noise gate keyed with the kick drum signal.",
+			"set_cc${1}1=38 label_cc${1}1=SubSynth Level     // Amount of synthesized low frequencysignal to be added",
+			"set_cc${1}2=76 label_cc${1}2=SubSynth Tune      // Maximum frequency - keep as low as possible to reduce distortion. In Key Osc mode sets the oscillator frequency",
+			"set_cc${1}3=127 label_cc${1}3=SubSynth Dry Mix  // Reduces the level of the original signal",
+			"set_cc${1}4=76 label_cc${1}4=SubSynth Thresh    // Increase to 'gate' the low frequency effect and stop unwanted background rumbling",
+			"set_cc${1}5=83 label_cc${1}5=SubSynth Release   // Decay time in Key Osc mode",
+			"",
+			"<effect>",
+			"bus=${2|main,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,fx1,fx2,fx3,fx4|}",
+			"type=com.mda.SubSynth",
+			"param_offset=${1:40}0",
+			"$0"
+		],
+		"description": "MDA SubSynth effect setup including <control> and <effect> blocks."
+	}
+}
